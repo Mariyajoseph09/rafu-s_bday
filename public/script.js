@@ -92,12 +92,27 @@
     const savedData = localStorage.getItem('rafu_event_data_v2');
     if (savedData) {
       const parsed = JSON.parse(savedData);
-      if (parsed.nickName === 'Rafu' || parsed.nickName === 'Rafeal') parsed.nickName = 'Rafael';
-      if (parsed.eventTime === '16:30') parsed.eventTime = '19:30';
+      let migrated = false;
+      if (typeof parsed.nickName === 'string' && /^(rafu|rafeal)$/i.test(parsed.nickName.trim())) {
+        parsed.nickName = 'Rafael';
+        migrated = true;
+      }
+      if (typeof parsed.fullName === 'string' && /(rafu|rafeal)/i.test(parsed.fullName)) {
+        parsed.fullName = DEFAULT_EVENT_DATA.fullName;
+        migrated = true;
+      }
+      if (parsed.eventTime === '16:30' || parsed.eventTime === '04:30') {
+        parsed.eventTime = '19:30';
+        migrated = true;
+      }
       if (parsed.venueAddress && parsed.venueAddress.includes('j1ZFTZy9tnqqyLXz6')) {
         parsed.venueAddress = DEFAULT_EVENT_DATA.venueAddress;
+        migrated = true;
       }
       eventData = { ...DEFAULT_EVENT_DATA, ...parsed };
+      if (migrated) {
+        localStorage.setItem('rafu_event_data_v2', JSON.stringify(eventData));
+      }
     }
   } catch (e) {
     console.warn('LocalStorage error:', e);
@@ -582,7 +597,7 @@
     }
 
     const [hStr, mStr] = eventData.eventTime.split(':');
-    let h = parseInt(hStr || '16', 10);
+    let h = parseInt(hStr || '19', 10);
     const m = mStr || '30';
     const ampm = h >= 12 ? 'PM' : 'AM';
     const h12 = h % 12 || 12;
