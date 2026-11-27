@@ -693,7 +693,7 @@
 
       const submitBtnLabel = btnSubmitRsvp ? btnSubmitRsvp.querySelector('span') : null;
       if (btnSubmitRsvp) btnSubmitRsvp.disabled = true;
-      if (submitBtnLabel) submitBtnLabel.textContent = 'SAVING RSVP...';
+      if (submitBtnLabel) submitBtnLabel.textContent = 'SAVING RESPONSE...';
 
       rsvpList.push({
         ...newRsvp,
@@ -706,7 +706,7 @@
       await saveRsvpToGoogleSheet(newRsvp);
 
       if (btnSubmitRsvp) btnSubmitRsvp.disabled = false;
-      if (submitBtnLabel) submitBtnLabel.textContent = 'SUBMIT RSVP';
+      if (submitBtnLabel) submitBtnLabel.textContent = 'SEND RESPONSE';
 
       triggerConfetti();
       playChimeEffect();
@@ -755,7 +755,7 @@
 
     if (guestListContainer) {
       if (rsvpList.length === 0) {
-        guestListContainer.innerHTML = '<p class="empty-list-notice">No RSVPs received yet. Be the first to RSVP!</p>';
+        guestListContainer.innerHTML = '<p class="empty-list-notice">No responses received yet. Be the first to reply!</p>';
       } else {
         guestListContainer.innerHTML = rsvpList.map(item => `
           <div class="guest-row-card">
@@ -780,7 +780,7 @@
   if (exportRsvpBtn) {
     exportRsvpBtn.addEventListener('click', () => {
       if (rsvpList.length === 0) {
-        alert('No RSVPs to export yet!');
+        alert('No responses to export yet!');
         return;
       }
       let csv = 'Name,Attending,Guests,Message,Date\n';
@@ -1146,7 +1146,7 @@
   if (shareInviteBtn) {
     shareInviteBtn.addEventListener('click', async () => {
       const shareTitle = `${eventData.nickName}'s 1st Birthday Celebration!`;
-      const shareText = `You're warmly invited to celebrate ${eventData.fullName}'s 1st Birthday on ${eventData.eventDate} at 7:30 PM (${eventData.venueName})! RSVP here:`;
+      const shareText = `You're warmly invited to celebrate ${eventData.fullName}'s 1st Birthday on ${eventData.eventDate} at 7:30 PM (${eventData.venueName})! Join the celebration here:`;
       const shareUrl = window.location.href;
 
       if (navigator.share) {
