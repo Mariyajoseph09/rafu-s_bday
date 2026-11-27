@@ -580,66 +580,75 @@
     </section>
 
     <!-- ==============================================
-         SECTION 6: "OUR LITTLE STAR" PHOTO GALLERY (WITH RAFU'S REAL PHOTOS)
+         SECTION 6: "LITTLE MOMENTS" ANIMATED BABY MEMORY GALLERY
          ============================================== -->
-    <section class="section-card gallery-section reveal-on-scroll" id="gallerySection">
-      
-      <!-- Decorative Storybook Animals framing the Gallery -->
-      <div class="gallery-character-accents" aria-hidden="true">
-        <!-- Bear Holding Big Heart on Left -->
-        <div class="gallery-char-left" title="Holding all our love!">
-          <img src="assets/animals/bear_heart.svg" alt="Teddy Bear Holding Red Heart" class="gallery-animal-svg">
-        </div>
-        <!-- Two Small Rabbits Sitting Together on Right -->
-        <div class="gallery-char-right" title="Bunny friends!">
-          <img src="assets/animals/bunnies_together.svg" alt="Two Cuddled Rabbits" class="gallery-animal-svg">
-        </div>
+    <section class="section-card gallery-section album-gallery-section reveal-on-scroll" id="gallerySection" aria-label="Little Moments Baby Photo Gallery">
+
+      <!-- Lightweight Floating Golden Stars & Occasional Hearts -->
+      <div class="gallery-deco-layer" aria-hidden="true">
+        <span class="gal-float-star gfs-1">✦</span>
+        <span class="gal-float-star gfs-2">★</span>
+        <span class="gal-float-star gfs-3">✦</span>
+        <span class="gal-float-star gfs-4">★</span>
+        <span class="gal-float-heart gfh-1">♥</span>
+        <span class="gal-float-heart gfh-2">♡</span>
+        <span class="gal-float-heart gfh-3">♥</span>
       </div>
 
-      <div class="section-header-wrap">
-        <span class="section-badge">MEMORIES</span>
-        <h3 class="section-heading">Our Little Star</h3>
-        <p class="section-subtext">365 days of giggles, cuddles, and baby smiles with Rafu!</p>
+      <!-- Gallery Heading with Gentle Floating Teddy Bear -->
+      <div class="gallery-album-header">
+        <div class="gallery-bear-accent" aria-hidden="true">
+          <img src="assets/animals/bear_heart.svg" alt="" class="gallery-teddy-float-svg">
+        </div>
+
+        <p class="gallery-eyebrow-badge">365 Days of Love &amp; Happiness</p>
+        <div class="gallery-title-ornament">
+          <span class="gal-title-deco" aria-hidden="true">✦ ♡</span>
+          <h3 class="gallery-script-heading">Little Moments</h3>
+          <span class="gal-title-deco" aria-hidden="true">♡ ✦</span>
+        </div>
+        <p class="gallery-album-subtitle">Every little smile, every tiny moment, a lifetime of memories.</p>
       </div>
 
-      <!-- Gallery Grid with Rafu's REAL Photos + Animated Character in Polaroid Frames -->
-      <div class="photo-cards-carousel" id="photoCarousel">
-        
-        <!-- Real Photo 1: Rafu Smiling & Laughing -->
-        <div class="photo-item-card real-star-card" data-index="0" title="Click to view full photo">
-          <div class="photo-matte">
-            <img src="assets/rafu_photo1.jpg" alt="Rafu Joyful Big Smile" class="gallery-img">
-            <div class="photo-badge">Sweet Smiles ❤️</div>
+      <!-- Elegant Automatic Slideshow Album Frame -->
+      <div class="album-showcase-wrap" id="albumGalleryRoot">
+        <div class="album-frame-card">
+          <!-- Subtle Frame Corner Accents -->
+          <span class="frame-corner-accent fca-tl" aria-hidden="true">✦</span>
+          <span class="frame-corner-accent fca-tr" aria-hidden="true">♡</span>
+
+          <div class="album-stage-viewport" id="galleryViewport">
+            <div class="album-slides-track" id="gallerySlidesContainer" role="region" aria-roledescription="carousel" aria-label="Rafu's Baby Photographs">
+              <!-- Slides rendered dynamically from BABY_GALLERY_PHOTOS in script.js -->
+            </div>
+
+            <!-- Clickable Overlay Hint to Open Lightbox -->
+            <button type="button" class="album-zoom-trigger" id="galleryZoomTrigger" aria-label="View full-screen photograph">
+              <span class="zoom-pill-hint">🔍 Tap to enlarge</span>
+            </button>
+
+            <!-- Navigation Arrows -->
+            <button type="button" class="album-nav-btn album-nav-prev" id="galleryPrevBtn" aria-label="Previous photograph">
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button type="button" class="album-nav-btn album-nav-next" id="galleryNextBtn" aria-label="Next photograph">
+              <span aria-hidden="true">›</span>
+            </button>
+
+            <!-- Photo Counter Pill -->
+            <div class="album-counter-pill" id="galleryCounter" aria-live="polite">1 / 12</div>
           </div>
-          <p class="photo-caption">"Pure joy & giggles every single day!"</p>
+
+          <!-- Smooth Fading Photo Caption -->
+          <div class="album-caption-bar" id="galleryCaptionBar">
+            <span class="caption-heart-mark" aria-hidden="true">♡</span>
+            <p class="album-caption-text" id="galleryCaptionText">Our Little Sunshine</p>
+            <span class="caption-heart-mark" aria-hidden="true">♡</span>
+          </div>
         </div>
 
-        <!-- Real Photo 2: Rafu Playing with Toy Ball -->
-        <div class="photo-item-card real-star-card" data-index="1" title="Click to view full photo">
-          <div class="photo-matte">
-            <img src="assets/rafu_photo2.jpg" alt="Rafu Playing and Exploring" class="gallery-img">
-            <div class="photo-badge">Little Explorer 🧸</div>
-          </div>
-          <p class="photo-caption">"Curious, crawling & stealing hearts!"</p>
-        </div>
-
-        <!-- Animated Storybook Boy Character Card -->
-        <div class="photo-item-card animated-star-card" data-index="2" title="Click to view full photo">
-          <div class="photo-matte">
-            <img src="assets/rafu_animated.png" alt="Rafu Animated Cute Baby Boy" class="gallery-img">
-            <div class="photo-badge">Our Prince ✨</div>
-          </div>
-          <p class="photo-caption">"Full of wonder and sweet dreams!"</p>
-        </div>
-
-        <!-- Bunny with Balloon Milestone Accent Card -->
-        <div class="photo-item-card milestone-char-card" data-index="3">
-          <div class="photo-matte milestone-bunny-matte">
-            <img src="assets/animals/bunny_balloon.svg" alt="Cute Bunny Holding Birthday Balloon" class="milestone-bunny-img">
-            <div class="photo-badge">Dec 9th • Turns 1 🎂</div>
-          </div>
-          <p class="photo-caption">Ready for the big cake smash! ❤️</p>
-        </div>
+        <!-- Pagination Dots -->
+        <div class="album-pagination-dots" id="galleryDots" role="tablist" aria-label="Choose a photograph"></div>
       </div>
     </section>
 
@@ -887,14 +896,27 @@
     </div>
   </div>
 
-  <!-- Modal: Photo Viewer -->
-  <div class="modal-backdrop hidden" id="photoViewerModal" role="dialog" aria-modal="true" aria-label="Photo Viewer">
-    <div class="modal-card photo-viewer-card">
-      <button class="modal-close-btn" id="closePhotoViewerBtn" aria-label="Close photo viewer">&times;</button>
-      <div class="photo-viewer-image-wrap">
-        <img src="" id="photoViewerImg" alt="Baby Rafu Full View">
+  <!-- Modal: Full-Screen Photo Lightbox -->
+  <div class="modal-backdrop lightbox-backdrop hidden" id="photoViewerModal" role="dialog" aria-modal="true" aria-label="Full-Screen Photo Viewer">
+    <div class="lightbox-dialog" id="lightboxStage">
+      <button type="button" class="lightbox-close-btn" id="closePhotoViewerBtn" aria-label="Close photo viewer">&times;</button>
+
+      <div class="lightbox-media-frame">
+        <button type="button" class="lightbox-nav-btn lightbox-prev" id="lightboxPrevBtn" aria-label="Previous photograph">
+          <span aria-hidden="true">‹</span>
+        </button>
+
+        <img src="" id="photoViewerImg" alt="Baby Rafu Full View" class="lightbox-img">
+
+        <button type="button" class="lightbox-nav-btn lightbox-next" id="lightboxNextBtn" aria-label="Next photograph">
+          <span aria-hidden="true">›</span>
+        </button>
       </div>
-      <p class="photo-viewer-caption" id="photoViewerCaption"></p>
+
+      <div class="lightbox-footer">
+        <p class="photo-viewer-caption" id="photoViewerCaption"></p>
+        <span class="lightbox-counter" id="lightboxCounter"></span>
+      </div>
     </div>
   </div>
 

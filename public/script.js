@@ -12,6 +12,70 @@
   // Paste your Google Apps Script Web App URL below to save all guest RSVPs to Google Sheets
   const GOOGLE_SHEETS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbxil5wdx1eLf48F6CIpWaQ13yzssIWLgCBhvugEUTfUX0YCgMV8z8mKxLL3TupztfUN/exec';
 
+  // Editable Baby Memory Album Data (Add, remove, or reorder entries here)
+  const BABY_GALLERY_PHOTOS = [
+    {
+      src: 'public/images/baby-gallery/baby-01.jpg',
+      alt: 'Baby Rafu smiling brightly outdoors',
+      caption: 'Our Little Sunshine'
+    },
+    {
+      src: 'public/images/baby-gallery/baby-02.jpg',
+      alt: 'Baby Rafu laughing happily in his bear shirt',
+      caption: 'Those Beautiful Smiles'
+    },
+    {
+      src: 'public/images/baby-gallery/baby-03.jpg',
+      alt: 'Baby Rafu peeking sweetly over shoulder',
+      caption: 'Our Bundle of Joy'
+    },
+    {
+      src: 'public/images/baby-gallery/baby-04.jpg',
+      alt: 'Baby Rafu wrapped cozily in a soft white blanket',
+      caption: 'Cozy Blanket Cuddles'
+    },
+    {
+      src: 'public/images/baby-gallery/baby-05.jpg',
+      alt: 'Baby Rafu smiling during tummy time beside his elephant toy',
+      caption: 'Little Hands, Big Dreams'
+    },
+    {
+      src: 'public/images/baby-gallery/baby-06.jpg',
+      alt: 'Baby Rafu outdoors with soft curls and a sweet smile',
+      caption: 'Sweet Curly Smiles'
+    },
+    {
+      src: 'public/images/baby-gallery/baby-07.jpg',
+      alt: 'Baby Rafu grinning happily in his fox t-shirt',
+      caption: 'Pure Joy Every Day'
+    },
+    {
+      src: 'public/images/baby-gallery/baby-08.jpg',
+      alt: 'Baby Rafu looking up full of wonder',
+      caption: 'Growing Up So Fast'
+    },
+    {
+      src: 'public/images/baby-gallery/baby-09.jpg',
+      alt: 'Baby Rafu playing with his colorful ball',
+      caption: 'Curious Little Explorer'
+    },
+    {
+      src: 'public/images/baby-gallery/baby-10.jpg',
+      alt: 'Baby Rafu held warmly in Dad arms outdoors',
+      caption: 'Held Safe & Loved'
+    },
+    {
+      src: 'public/images/baby-gallery/baby-11.jpg',
+      alt: 'Baby Rafu waving hello with a joyful smile',
+      caption: 'Hello Big World!'
+    },
+    {
+      src: 'public/images/baby-gallery/baby-12.jpg',
+      alt: 'Mom and Dad lifting baby Rafu joyfully at sunset',
+      caption: 'Forever Our Baby'
+    }
+  ];
+
   const DEFAULT_EVENT_DATA = {
     nickName: 'Rafu',
     fullName: 'Rafael Richy Benedict',
@@ -714,24 +778,268 @@
   }
 
   // ==========================================
-  // 9. PHOTO GALLERY VIEWER
+  // 9. BABY PHOTO ALBUM SLIDESHOW & FULL-SCREEN LIGHTBOX
   // ==========================================
-  function openPhotoModal(src, caption) {
-    if (!photoViewerModal) return;
-    photoViewerImg.src = src;
-    photoViewerCaption.textContent = caption || 'Baby Rafu - Our Little Star';
-    photoViewerModal.classList.remove('hidden');
+  const galleryViewport = document.getElementById('galleryViewport');
+  const gallerySlidesContainer = document.getElementById('gallerySlidesContainer');
+  const galleryDots = document.getElementById('galleryDots');
+  const galleryPrevBtn = document.getElementById('galleryPrevBtn');
+  const galleryNextBtn = document.getElementById('galleryNextBtn');
+  const galleryZoomTrigger = document.getElementById('galleryZoomTrigger');
+  const galleryCaptionText = document.getElementById('galleryCaptionText');
+  const galleryCounter = document.getElementById('galleryCounter');
+  const albumGalleryRoot = document.getElementById('albumGalleryRoot');
+
+  const lightboxStage = document.getElementById('lightboxStage');
+  const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
+  const lightboxNextBtn = document.getElementById('lightboxNextBtn');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+
+  let currentSlideIndex = 0;
+  let slideshowTimer = null;
+  let isGalleryPaused = false;
+  let isLightboxGalleryMode = false;
+  const SLIDESHOW_INTERVAL_MS = 4000;
+  const reducedMotionQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+
+  function renderGallerySlides() {
+    if (!gallerySlidesContainer || !galleryDots || !BABY_GALLERY_PHOTOS.length) return;
+
+    gallerySlidesContainer.innerHTML = BABY_GALLERY_PHOTOS.map((photo, idx) => `
+      <div class="album-slide ${idx === 0 ? 'is-active' : ''}" data-slide-index="${idx}" aria-hidden="${idx === 0 ? 'false' : 'true'}">
+        <div class="album-slide-ambient" style="background-image: url('${escapeHtml(photo.src)}');" aria-hidden="true"></div>
+        <img
+          src="${escapeHtml(photo.src)}"
+          alt="${escapeHtml(photo.alt || 'Baby Rafu memory')}"
+          class="album-slide-img"
+          loading="${idx < 2 ? 'eager' : 'lazy'}"
+          decoding="async"
+        >
+      </div>
+    `).join('');
+
+    galleryDots.innerHTML = BABY_GALLERY_PHOTOS.map((photo, idx) => `
+      <button
+        type="button"
+        class="album-dot ${idx === 0 ? 'is-active' : ''}"
+        data-dot-index="${idx}"
+        role="tab"
+        aria-selected="${idx === 0 ? 'true' : 'false'}"
+        aria-label="View photo ${idx + 1}: ${escapeHtml(photo.caption || 'Memory')}"
+      ></button>
+    `).join('');
+
+    galleryDots.querySelectorAll('.album-dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt(dot.dataset.dotIndex, 10);
+        goToSlide(idx, true);
+      });
+    });
+
+    updateSlideUI();
   }
 
-  document.querySelectorAll('.photo-item-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const img = card.querySelector('img');
-      const caption = card.querySelector('.photo-caption');
-      if (img) {
-        openPhotoModal(img.src, caption ? caption.textContent : '');
+  function updateSlideUI() {
+    if (!gallerySlidesContainer || !BABY_GALLERY_PHOTOS.length) return;
+    const total = BABY_GALLERY_PHOTOS.length;
+    const current = BABY_GALLERY_PHOTOS[currentSlideIndex];
+
+    gallerySlidesContainer.querySelectorAll('.album-slide').forEach((slide, idx) => {
+      const active = idx === currentSlideIndex;
+      slide.classList.toggle('is-active', active);
+      slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+
+    if (galleryDots) {
+      galleryDots.querySelectorAll('.album-dot').forEach((dot, idx) => {
+        const active = idx === currentSlideIndex;
+        dot.classList.toggle('is-active', active);
+        dot.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+    }
+
+    if (galleryCounter) {
+      galleryCounter.textContent = `${currentSlideIndex + 1} / ${total}`;
+    }
+
+    if (galleryCaptionText && current) {
+      galleryCaptionText.classList.remove('caption-fade-in');
+      void galleryCaptionText.offsetWidth;
+      galleryCaptionText.textContent = current.caption || '';
+      galleryCaptionText.classList.add('caption-fade-in');
+    }
+
+    if (isLightboxGalleryMode && photoViewerModal && !photoViewerModal.classList.contains('hidden')) {
+      syncLightboxWithCurrentSlide();
+    }
+  }
+
+  function goToSlide(nextIndex, isManual) {
+    const total = BABY_GALLERY_PHOTOS.length;
+    if (!total) return;
+    currentSlideIndex = ((nextIndex % total) + total) % total;
+    updateSlideUI();
+    if (isManual) {
+      resetSlideshowTimer();
+    }
+  }
+
+  function startSlideshowTimer() {
+    clearInterval(slideshowTimer);
+    if (reducedMotionQuery && reducedMotionQuery.matches) return;
+    if (document.hidden || isGalleryPaused || BABY_GALLERY_PHOTOS.length <= 1) return;
+    if (photoViewerModal && !photoViewerModal.classList.contains('hidden')) return;
+
+    slideshowTimer = setInterval(() => {
+      goToSlide(currentSlideIndex + 1, false);
+    }, SLIDESHOW_INTERVAL_MS);
+  }
+
+  function resetSlideshowTimer() {
+    clearInterval(slideshowTimer);
+    startSlideshowTimer();
+  }
+
+  function pauseSlideshow() {
+    isGalleryPaused = true;
+    clearInterval(slideshowTimer);
+  }
+
+  function resumeSlideshow() {
+    isGalleryPaused = false;
+    startSlideshowTimer();
+  }
+
+  if (galleryPrevBtn) {
+    galleryPrevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToSlide(currentSlideIndex - 1, true);
+    });
+  }
+
+  if (galleryNextBtn) {
+    galleryNextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToSlide(currentSlideIndex + 1, true);
+    });
+  }
+
+  if (albumGalleryRoot) {
+    albumGalleryRoot.addEventListener('mouseenter', pauseSlideshow);
+    albumGalleryRoot.addEventListener('mouseleave', resumeSlideshow);
+    albumGalleryRoot.addEventListener('focusin', pauseSlideshow);
+    albumGalleryRoot.addEventListener('focusout', (e) => {
+      if (!albumGalleryRoot.contains(e.relatedTarget)) {
+        resumeSlideshow();
       }
     });
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      clearInterval(slideshowTimer);
+    } else {
+      startSlideshowTimer();
+    }
   });
+
+  if (reducedMotionQuery && typeof reducedMotionQuery.addEventListener === 'function') {
+    reducedMotionQuery.addEventListener('change', () => {
+      if (reducedMotionQuery.matches) {
+        clearInterval(slideshowTimer);
+      } else {
+        startSlideshowTimer();
+      }
+    });
+  }
+
+  // Touch swipe on the main album stage
+  if (galleryViewport) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    galleryViewport.addEventListener('touchstart', (e) => {
+      if (!e.touches.length) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      pauseSlideshow();
+    }, { passive: true });
+
+    galleryViewport.addEventListener('touchend', (e) => {
+      if (!e.changedTouches.length) {
+        resumeSlideshow();
+        return;
+      }
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy)) {
+        goToSlide(dx < 0 ? currentSlideIndex + 1 : currentSlideIndex - 1, true);
+      }
+      setTimeout(resumeSlideshow, 1200);
+    }, { passive: true });
+  }
+
+  // Lightbox Controls
+  function syncLightboxWithCurrentSlide() {
+    const photo = BABY_GALLERY_PHOTOS[currentSlideIndex];
+    if (!photo || !photoViewerImg) return;
+    photoViewerImg.src = photo.src;
+    photoViewerImg.alt = photo.alt || 'Baby Rafu Full View';
+    if (photoViewerCaption) photoViewerCaption.textContent = photo.caption || '';
+    if (lightboxCounter) lightboxCounter.textContent = `${currentSlideIndex + 1} / ${BABY_GALLERY_PHOTOS.length}`;
+  }
+
+  function openGalleryLightbox(index) {
+    if (!photoViewerModal) return;
+    isLightboxGalleryMode = true;
+    currentSlideIndex = ((index % BABY_GALLERY_PHOTOS.length) + BABY_GALLERY_PHOTOS.length) % BABY_GALLERY_PHOTOS.length;
+    updateSlideUI();
+    syncLightboxWithCurrentSlide();
+    if (lightboxPrevBtn) lightboxPrevBtn.style.display = '';
+    if (lightboxNextBtn) lightboxNextBtn.style.display = '';
+    if (lightboxCounter) lightboxCounter.style.display = '';
+    photoViewerModal.classList.remove('hidden');
+    clearInterval(slideshowTimer);
+  }
+
+  function openPhotoModal(src, caption) {
+    if (!photoViewerModal) return;
+    isLightboxGalleryMode = false;
+    photoViewerImg.src = src;
+    photoViewerImg.alt = caption || 'Baby Rafu Full View';
+    if (photoViewerCaption) photoViewerCaption.textContent = caption || 'Baby Rafu - Our Little Star';
+    if (lightboxPrevBtn) lightboxPrevBtn.style.display = 'none';
+    if (lightboxNextBtn) lightboxNextBtn.style.display = 'none';
+    if (lightboxCounter) lightboxCounter.style.display = 'none';
+    photoViewerModal.classList.remove('hidden');
+    clearInterval(slideshowTimer);
+  }
+
+  function closePhotoModal() {
+    if (!photoViewerModal) return;
+    photoViewerModal.classList.add('hidden');
+    isLightboxGalleryMode = false;
+    startSlideshowTimer();
+  }
+
+  if (galleryZoomTrigger) {
+    galleryZoomTrigger.addEventListener('click', () => {
+      openGalleryLightbox(currentSlideIndex);
+    });
+  }
+
+  if (lightboxPrevBtn) {
+    lightboxPrevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToSlide(currentSlideIndex - 1, false);
+    });
+  }
+
+  if (lightboxNextBtn) {
+    lightboxNextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToSlide(currentSlideIndex + 1, false);
+    });
+  }
 
   if (babyPhotoTrigger) {
     babyPhotoTrigger.addEventListener('click', () => {
@@ -740,10 +1048,50 @@
   }
 
   if (closePhotoViewerBtn) {
-    closePhotoViewerBtn.addEventListener('click', () => {
-      photoViewerModal.classList.add('hidden');
+    closePhotoViewerBtn.addEventListener('click', closePhotoModal);
+  }
+
+  if (photoViewerModal) {
+    photoViewerModal.addEventListener('click', (e) => {
+      if (e.target === photoViewerModal) {
+        closePhotoModal();
+      }
     });
   }
+
+  document.addEventListener('keydown', (e) => {
+    if (!photoViewerModal || photoViewerModal.classList.contains('hidden')) return;
+    if (e.key === 'Escape') {
+      closePhotoModal();
+    } else if (isLightboxGalleryMode && e.key === 'ArrowLeft') {
+      goToSlide(currentSlideIndex - 1, false);
+    } else if (isLightboxGalleryMode && e.key === 'ArrowRight') {
+      goToSlide(currentSlideIndex + 1, false);
+    }
+  });
+
+  // Mobile swipe inside Full-Screen Lightbox
+  if (lightboxStage) {
+    let lbTouchStartX = 0;
+    let lbTouchStartY = 0;
+    lightboxStage.addEventListener('touchstart', (e) => {
+      if (!e.touches.length) return;
+      lbTouchStartX = e.touches[0].clientX;
+      lbTouchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    lightboxStage.addEventListener('touchend', (e) => {
+      if (!isLightboxGalleryMode || !e.changedTouches.length) return;
+      const dx = e.changedTouches[0].clientX - lbTouchStartX;
+      const dy = e.changedTouches[0].clientY - lbTouchStartY;
+      if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy)) {
+        goToSlide(dx < 0 ? currentSlideIndex + 1 : currentSlideIndex - 1, false);
+      }
+    }, { passive: true });
+  }
+
+  renderGallerySlides();
+  startSlideshowTimer();
 
   // ==========================================
   // 10. QUICK ACTION BUTTONS

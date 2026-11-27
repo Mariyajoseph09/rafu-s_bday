@@ -4176,3 +4176,572 @@ a.venue-card {
     animation: none !important;
   }
 }
+
+/* ==========================================================================
+   SECTION 6: "LITTLE MOMENTS" ANIMATED BABY MEMORY GALLERY & LIGHTBOX
+   ========================================================================== */
+.album-gallery-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(175deg, #FDFBF7 0%, #F9F4EA 58%, #F4ECDF 100%);
+  border: 1.2px solid #E5D9C7;
+  border-radius: 26px;
+  padding: 26px 20px 24px;
+  box-shadow:
+    0 12px 32px rgba(105, 86, 62, 0.08),
+    inset 0 0 0 5px rgba(255, 253, 249, 0.72);
+}
+
+.gallery-deco-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.gal-float-star {
+  position: absolute;
+  color: #CAA664;
+  font-size: 13px;
+  animation: twinkle 3s ease-in-out infinite;
+  user-select: none;
+}
+
+.gfs-1 { top: 22px; left: 10%; font-size: 14px; animation-delay: 0s; }
+.gfs-2 { top: 38px; right: 11%; font-size: 11px; animation-delay: 0.8s; }
+.gfs-3 { bottom: 32px; left: 9%; font-size: 12px; animation-delay: 1.5s; }
+.gfs-4 { bottom: 38px; right: 10%; font-size: 13px; animation-delay: 2.1s; }
+
+.gal-float-heart {
+  position: absolute;
+  color: #D58782;
+  font-size: 12px;
+  opacity: 0;
+  animation: albumOccasionalHeart 5.4s ease-out infinite;
+  user-select: none;
+}
+
+.gfh-1 { top: 68px; left: 16%; animation-delay: 0.6s; }
+.gfh-2 { top: 82px; right: 16%; font-size: 11px; color: #C29B6B; animation-delay: 2.4s; }
+.gfh-3 { bottom: 64px; right: 15%; font-size: 11px; animation-delay: 3.9s; }
+
+@keyframes albumOccasionalHeart {
+  0%, 35% { opacity: 0; transform: translateY(6px) scale(0.7); }
+  55% { opacity: 0.82; transform: translateY(-6px) scale(1.05); }
+  85% { opacity: 0.35; transform: translateY(-18px) scale(0.95); }
+  100% { opacity: 0; transform: translateY(-24px) scale(0.75); }
+}
+
+/* Gallery Header & Floating Teddy Bear */
+.gallery-album-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.gallery-bear-accent {
+  width: 82px;
+  margin: -6px auto 4px;
+  animation: galleryBearFloat 4.2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 5px 10px rgba(96, 76, 56, 0.14));
+}
+
+.gallery-teddy-float-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes galleryBearFloat {
+  0% { transform: translateY(0) rotate(-1.5deg); }
+  100% { transform: translateY(-6px) rotate(1.5deg); }
+}
+
+.gallery-eyebrow-badge {
+  display: inline-block;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #5E6F58;
+  background: rgba(138, 154, 132, 0.16);
+  border: 1px solid rgba(138, 154, 132, 0.34);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+}
+
+.gallery-title-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gal-title-deco {
+  font-size: 12px;
+  color: #C79F59;
+  letter-spacing: 3px;
+}
+
+.gallery-script-heading {
+  font-family: var(--font-script);
+  font-size: clamp(40px, 10vw, 52px);
+  font-weight: 400;
+  color: #5C432F;
+  line-height: 1;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(92, 67, 47, 0.08);
+}
+
+.gallery-album-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(14px, 3.8vw, 16px);
+  color: #7E6650;
+  max-width: 400px;
+  margin: 6px auto 0;
+  line-height: 1.4;
+}
+
+/* Album Slideshow Showcase */
+.album-showcase-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 490px;
+  margin: 0 auto;
+}
+
+.album-frame-card {
+  position: relative;
+  background: #FFFDF8;
+  border: 1.5px solid #E4D7C4;
+  border-radius: 22px;
+  padding: 12px 12px 14px;
+  box-shadow:
+    0 12px 28px rgba(96, 76, 54, 0.11),
+    0 2px 6px rgba(96, 76, 54, 0.05);
+}
+
+.frame-corner-accent {
+  position: absolute;
+  top: 7px;
+  font-size: 10px;
+  color: #C9A66B;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.fca-tl { left: 10px; }
+.fca-tr { right: 10px; color: #D58782; }
+
+.album-stage-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3.8;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #F4ECE0;
+  border: 1px solid #EAE0D0;
+  box-shadow: inset 0 2px 10px rgba(96, 76, 54, 0.06);
+}
+
+.album-slides-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.album-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.85s ease-in-out;
+  pointer-events: none;
+}
+
+.album-slide.is-active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* Soft Blurred Ambient Fill for Portrait/Landscape Harmony */
+.album-slide-ambient {
+  position: absolute;
+  inset: -16px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px) saturate(0.88) brightness(1.04);
+  opacity: 0.34;
+  transform: scale(1.08);
+  pointer-events: none;
+}
+
+.album-slide-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.8s ease-out;
+}
+
+.album-slide.is-active .album-slide-img {
+  animation: albumKenBurns 4.4s ease-out forwards;
+}
+
+@keyframes albumKenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.045); }
+}
+
+/* Clickable Full-Screen Overlay Trigger */
+.album-zoom-trigger {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: transparent;
+  border: none;
+  cursor: zoom-in;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.zoom-pill-hint {
+  background: rgba(61, 52, 42, 0.62);
+  backdrop-filter: blur(6px);
+  color: #FFFDF9;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  opacity: 0.88;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.album-zoom-trigger:hover .zoom-pill-hint {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* Previous / Next Navigation Arrows */
+.album-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(224, 211, 192, 0.9);
+  background: rgba(255, 252, 246, 0.88);
+  backdrop-filter: blur(6px);
+  color: #5C432F;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(80, 62, 44, 0.16);
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.album-nav-btn:hover {
+  background: #FFFFFF;
+  border-color: var(--color-sage);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.album-nav-prev { left: 10px; }
+.album-nav-next { right: 10px; }
+
+.album-counter-pill {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 5;
+  background: rgba(61, 52, 42, 0.66);
+  backdrop-filter: blur(6px);
+  color: #FFFDF9;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  pointer-events: none;
+}
+
+/* Smooth Fading Photo Caption Bar */
+.album-caption-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 8px 2px;
+  min-height: 36px;
+}
+
+.caption-heart-mark {
+  font-size: 11px;
+  color: #C79B74;
+}
+
+.album-caption-text {
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 4.4vw, 19px);
+  font-style: italic;
+  font-weight: 600;
+  color: #5C432F;
+  text-align: center;
+  margin: 0;
+}
+
+.album-caption-text.caption-fade-in {
+  animation: captionFadeUp 0.55s ease-out;
+}
+
+@keyframes captionFadeUp {
+  0% { opacity: 0; transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Pagination Dots */
+.album-pagination-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding: 0 6px;
+}
+
+.album-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: #D6C7B3;
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease, transform 0.25s ease;
+}
+
+.album-dot:hover {
+  background: #B39D82;
+  transform: scale(1.15);
+}
+
+.album-dot.is-active {
+  width: 22px;
+  background: var(--color-sage);
+}
+
+/* Full-Screen Lightbox */
+.lightbox-backdrop {
+  background: rgba(28, 24, 20, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 16px;
+}
+
+.lightbox-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: modalPop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lightbox-close-btn {
+  align-self: flex-end;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 252, 246, 0.16);
+  color: #FFFFFF;
+  font-size: 26px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close-btn:hover {
+  background: rgba(255, 252, 246, 0.28);
+  transform: scale(1.06);
+}
+
+.lightbox-media-frame {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+  border: 4px solid #FAF5EC;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+  object-fit: contain;
+  background: #FAF5EC;
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(40, 34, 28, 0.65);
+  color: #FFFDF9;
+  font-size: 28px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 3;
+}
+
+.lightbox-nav-btn:hover {
+  background: rgba(40, 34, 28, 0.9);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-prev { left: 8px; }
+.lightbox-next { right: 8px; }
+
+.lightbox-footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.lightbox-backdrop .photo-viewer-caption {
+  color: #FFFDF8;
+  font-size: 19px;
+  margin-top: 0;
+}
+
+.lightbox-counter {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: rgba(255, 250, 240, 0.78);
+}
+
+/* Mobile Gallery & Lightbox Adjustments (320px - 420px) */
+@media (max-width: 520px) {
+  .album-gallery-section {
+    padding: 20px 12px 20px;
+    border-radius: 22px;
+  }
+
+  .gallery-bear-accent {
+    width: 68px;
+  }
+
+  .album-frame-card {
+    padding: 8px 8px 12px;
+    border-radius: 18px;
+  }
+
+  .album-stage-viewport {
+    aspect-ratio: 4 / 4.2;
+    border-radius: 13px;
+  }
+
+  .album-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
+
+  .album-nav-prev { left: 6px; }
+  .album-nav-next { right: 6px; }
+
+  .lightbox-backdrop {
+    padding: 10px;
+  }
+
+  .lightbox-img {
+    max-height: 66vh;
+    border-width: 3px;
+  }
+
+  .lightbox-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .album-gallery-section {
+    padding: 18px 8px 18px;
+  }
+
+  .album-frame-card {
+    padding: 6px 6px 10px;
+  }
+
+  .album-pagination-dots {
+    gap: 5px;
+  }
+
+  .album-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .album-dot.is-active {
+    width: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gal-float-star,
+  .gal-float-heart,
+  .gallery-bear-accent,
+  .album-slide.is-active .album-slide-img,
+  .album-caption-text.caption-fade-in {
+    animation: none !important;
+  }
+
+  .album-slide {
+    transition: none !important;
+  }
+}
