@@ -1109,7 +1109,7 @@ a.venue-card {
 }
 
 /* ==========================================================================
-   SECTION 4: ANIMATED TEDDY IN VINTAGE CAR SHOWCASE
+   SECTION 4: RAFEAL & TEDDY BALLOON RIDE SHOWCASE
    ========================================================================== */
 .animated-car-showcase-section {
   display: flex;
@@ -1119,13 +1119,16 @@ a.venue-card {
 
 .car-showcase-card {
   width: 100%;
-  background: var(--bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-card);
-  padding: 16px 14px;
+  background: linear-gradient(180deg, #FDFBF7 0%, #FAF5EC 100%);
+  border: 1.2px solid #E6DAC8;
+  border-radius: 24px;
+  padding: 20px 16px 18px;
   text-align: center;
-  box-shadow: var(--shadow-subtle);
+  box-shadow:
+    var(--shadow-subtle),
+    inset 0 0 0 4px rgba(255, 253, 249, 0.72);
   position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1133,8 +1136,7 @@ a.venue-card {
 
 .clouds-backdrop {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   pointer-events: none;
 }
 
@@ -1171,96 +1173,147 @@ a.venue-card {
   }
 }
 
+.car-scene-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.car-deco-star {
+  position: absolute;
+  color: #CAA664;
+  font-size: 13px;
+  animation: twinkle 3s ease-in-out infinite;
+  user-select: none;
+}
+
+.cds-1 { top: 18px; left: 10%; font-size: 14px; animation-delay: 0s; }
+.cds-2 { top: 34px; right: 10%; font-size: 11px; animation-delay: 0.7s; }
+.cds-3 { bottom: 68px; left: 8%; font-size: 12px; animation-delay: 1.4s; }
+.cds-4 { bottom: 72px; right: 9%; font-size: 13px; animation-delay: 2.1s; }
+
+.car-deco-heart {
+  position: absolute;
+  color: #D78B85;
+  font-size: 12px;
+  opacity: 0;
+  animation: heroUpHeart 5.4s ease-out infinite;
+  user-select: none;
+}
+
+.cdh-1 { top: 96px; left: 9%; animation-delay: 0.6s; }
+.cdh-2 { top: 64px; right: 15%; font-size: 11px; color: #C59B70; animation-delay: 2.4s; }
+.cdh-3 { bottom: 96px; right: 10%; font-size: 11px; animation-delay: 3.9s; }
+
+.car-accent-balloon {
+  position: absolute;
+  animation: balloonSway 4.2s ease-in-out infinite alternate;
+}
+
+.cab-left {
+  top: 22px;
+  left: 16px;
+}
+
+.cab-top {
+  top: 14px;
+  left: 52px;
+  animation-delay: 0.9s;
+}
+
 .car-illustration-container {
-  width: 280px;
-  height: 280px;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  animation: carEngineBob 3.6s ease-in-out infinite;
+  z-index: 4;
+  margin: 4px auto 8px;
+  animation: carRideFloat 4.4s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
-@keyframes carEngineBob {
-
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-6px) rotate(-0.6deg);
-  }
-}
-
-.car-floating-balloons {
-  position: absolute;
-  top: 15px;
-  right: 42px;
-  display: flex;
-  gap: 4px;
-  z-index: 8;
-}
-
-.car-balloon {
-  font-size: 28px;
-  display: inline-block;
-  cursor: pointer;
-  transition: transform 0.25s;
-  animation: balloonSway 3s ease-in-out infinite alternate;
-}
-
-.car-balloon:hover {
-  transform: scale(1.3) translateY(-4px);
-}
-
-.balloon-sage {
-  animation-delay: 0s;
-}
-
-.balloon-peach {
-  animation-delay: 0.6s;
-}
-
-.balloon-gold {
-  animation-delay: 1.2s;
-}
-
-@keyframes balloonSway {
+@keyframes carRideFloat {
   0% {
-    transform: translateY(0px) rotate(-4deg);
+    transform: translateY(0px);
   }
 
   100% {
-    transform: translateY(-8px) rotate(5deg);
+    transform: translateY(-6px);
   }
 }
 
 .teddy-car-img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 400px;
   object-fit: contain;
-  filter: drop-shadow(0 10px 18px rgba(90, 80, 65, 0.12));
+  display: block;
+  filter: drop-shadow(0 12px 20px rgba(90, 78, 60, 0.14));
 }
 
-.foliage-bottom {
+.car-caption-row {
+  position: relative;
+  z-index: 4;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 90%;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
   margin-top: 4px;
+  padding: 6px 8px 2px;
+}
+
+.car-caption-ornament {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.car-cap-star {
+  font-size: 11px;
+  color: #C79F59;
 }
 
 .car-quote-text {
   font-family: var(--font-serif);
-  font-size: 15px;
+  font-size: clamp(16px, 4.3vw, 19px);
   font-style: italic;
-  color: var(--color-charcoal);
+  font-weight: 600;
+  color: #5C432F;
+  line-height: 1.3;
 }
 
-.leaf {
-  font-size: 18px;
-  opacity: 0.6;
+@media (max-width: 420px) {
+  .car-showcase-card {
+    padding: 16px 10px 16px;
+    border-radius: 20px;
+  }
+
+  .car-illustration-container {
+    max-width: 100%;
+  }
+
+  .cab-left {
+    top: 14px;
+    left: 8px;
+    transform: scale(0.82);
+  }
+
+  .cab-top {
+    top: 10px;
+    left: 36px;
+    transform: scale(0.82);
+  }
+
+  .car-caption-row {
+    gap: 6px;
+  }
 }
 
 /* ==========================================================================
@@ -4800,6 +4853,10 @@ a.venue-card {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .car-illustration-container,
+  .car-deco-star,
+  .car-deco-heart,
+  .car-accent-balloon,
   .rafeal-teddy-hero-img,
   .hero-ground-shadow,
   .vintage-hero-heart,

@@ -538,28 +538,61 @@
     </section>
 
     <!-- ==============================================
-         SECTION 4: ANIMATED TEDDY BEAR IN VINTAGE CAR
+         SECTION 4: RAFEAL & TEDDY BALLOON RIDE IN VINTAGE CAR
          ============================================== -->
-    <section class="animated-car-showcase-section reveal-on-scroll">
+    <section class="animated-car-showcase-section reveal-on-scroll" id="carRideSection">
       <div class="car-showcase-card">
-        <div class="clouds-backdrop">
+        <div class="clouds-backdrop" aria-hidden="true">
           <div class="cloud cloud-1"></div>
           <div class="cloud cloud-2"></div>
         </div>
+
+        <!-- Subtle Twinkling Golden Stars, Occasional Hearts & Gentle Accent Balloons -->
+        <div class="car-scene-decor" aria-hidden="true">
+          <span class="car-deco-star cds-1">✦</span>
+          <span class="car-deco-star cds-2">★</span>
+          <span class="car-deco-star cds-3">✦</span>
+          <span class="car-deco-star cds-4">★</span>
+          <span class="car-deco-heart cdh-1">♥</span>
+          <span class="car-deco-heart cdh-2">♡</span>
+          <span class="car-deco-heart cdh-3">♥</span>
+
+          <div class="car-accent-balloon cab-left">
+            <svg viewBox="0 0 36 56" width="28" height="44">
+              <path d="M18 36 Q16 45 19 54" stroke="#B6A38A" stroke-width="1.2" fill="none"/>
+              <ellipse cx="18" cy="18" rx="13" ry="16" fill="#A6B79E" opacity="0.58"/>
+              <ellipse cx="14" cy="12" rx="3.5" ry="5.5" transform="rotate(-20 14 12)" fill="#FFFFFF" opacity="0.45"/>
+            </svg>
+          </div>
+          <div class="car-accent-balloon cab-top">
+            <svg viewBox="0 0 32 50" width="22" height="36">
+              <path d="M16 31 Q18 39 15 48" stroke="#B6A38A" stroke-width="1.1" fill="none"/>
+              <ellipse cx="16" cy="16" rx="11" ry="14" fill="#E9D6BE" opacity="0.65"/>
+              <ellipse cx="12.5" cy="11" rx="3" ry="4.5" transform="rotate(-20 12.5 11)" fill="#FFFFFF" opacity="0.5"/>
+            </svg>
+          </div>
+        </div>
         
         <div class="car-illustration-container animated-car-wrap" id="carIllustration">
-          <div class="car-floating-balloons">
-            <span class="car-balloon balloon-sage" title="Pop me!">🎈</span>
-            <span class="car-balloon balloon-peach" title="Pop me!">🎈</span>
-            <span class="car-balloon balloon-gold" title="Pop me!">🎈</span>
-          </div>
-          <img src="assets/teddy_car.png" alt="Baby Teddy Bear in Vintage Green Car" class="art-img teddy-car-img" id="teddyCarImg">
+          <img src="public/images/baby-teddy-balloon-ride.png" alt="Baby Rafeal waving happily beside his teddy bear in a vintage sage-green car with beige and green balloons and birthday gifts" class="art-img teddy-car-img" id="teddyCarImg" loading="lazy" decoding="async">
         </div>
 
-        <div class="foliage-bottom">
-          <span class="leaf leaf-left">🌿</span>
-          <span class="car-quote-text">"Cruising into One with Lots of Fun!"</span>
-          <span class="leaf leaf-right">🌿</span>
+        <div class="foliage-bottom car-caption-row">
+          <span class="car-caption-ornament" aria-hidden="true">
+            <svg viewBox="0 0 28 28" width="20" height="20">
+              <path d="M4 24 C6 14, 14 6, 24 4 C20 14, 14 20, 4 24 Z" fill="#9BB094" opacity="0.85"/>
+              <path d="M4 24 C12 16, 18 10, 24 4" stroke="#6E8266" stroke-width="1.2" fill="none"/>
+            </svg>
+            <span class="car-cap-star">✦</span>
+          </span>
+          <span class="car-quote-text">"Riding into One with Lots of Love!"</span>
+          <span class="car-caption-ornament" aria-hidden="true">
+            <span class="car-cap-star">✦</span>
+            <svg viewBox="0 0 28 28" width="20" height="20">
+              <path d="M24 24 C22 14, 14 6, 4 4 C8 14, 14 20, 24 24 Z" fill="#9BB094" opacity="0.85"/>
+              <path d="M24 24 C16 16, 10 10, 4 4" stroke="#6E8266" stroke-width="1.2" fill="none"/>
+            </svg>
+          </span>
         </div>
       </div>
     </section>
