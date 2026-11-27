@@ -83,7 +83,7 @@
     eventTime: '16:30',      // 24h
     venueName: 'Celebration Venue',
     venueCity: 'Tap for Google Maps 📍',
-    venueAddress: 'https://goo.gl/maps/j1ZFTZy9tnqqyLXz6?g_st=aw',
+    venueAddress: 'https://maps.app.goo.gl/dVaq5fmaRATvLRV79?g_st=aw',
     rsvpDeadline: 'December 1st'
   };
 
@@ -93,6 +93,9 @@
     if (savedData) {
       const parsed = JSON.parse(savedData);
       if (parsed.nickName === 'Rafu') parsed.nickName = 'Rafeal';
+      if (parsed.venueAddress && parsed.venueAddress.includes('j1ZFTZy9tnqqyLXz6')) {
+        parsed.venueAddress = DEFAULT_EVENT_DATA.venueAddress;
+      }
       eventData = { ...DEFAULT_EVENT_DATA, ...parsed };
     }
   } catch (e) {
@@ -1099,7 +1102,7 @@
   // 10. QUICK ACTION BUTTONS
   // ==========================================
   function openDirections() {
-    window.open('https://goo.gl/maps/j1ZFTZy9tnqqyLXz6?g_st=aw', '_blank');
+    window.open('https://maps.app.goo.gl/dVaq5fmaRATvLRV79?g_st=aw', '_blank');
   }
 
   if (getDirectionsBtn) getDirectionsBtn.addEventListener('click', openDirections);
