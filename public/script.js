@@ -1,5 +1,5 @@
 /**
- * RAFU'S 1ST BIRTHDAY CELEBRATION INVITATION
+ * RAFEAL'S 1ST BIRTHDAY CELEBRATION INVITATION
  * Single-Page Interactive Engine with Rich Animations
  */
 
@@ -16,68 +16,68 @@
   const BABY_GALLERY_PHOTOS = [
     {
       src: 'public/images/baby-gallery/baby-01.jpg',
-      alt: 'Baby Rafu smiling brightly outdoors',
+      alt: 'Baby Rafeal smiling brightly outdoors',
       caption: 'Our Little Sunshine'
     },
     {
       src: 'public/images/baby-gallery/baby-02.jpg',
-      alt: 'Baby Rafu laughing happily in his bear shirt',
+      alt: 'Baby Rafeal laughing happily in his bear shirt',
       caption: 'Those Beautiful Smiles'
     },
     {
       src: 'public/images/baby-gallery/baby-03.jpg',
-      alt: 'Baby Rafu peeking sweetly over shoulder',
+      alt: 'Baby Rafeal peeking sweetly over shoulder',
       caption: 'Our Bundle of Joy'
     },
     {
       src: 'public/images/baby-gallery/baby-04.jpg',
-      alt: 'Baby Rafu wrapped cozily in a soft white blanket',
+      alt: 'Baby Rafeal wrapped cozily in a soft white blanket',
       caption: 'Cozy Blanket Cuddles'
     },
     {
       src: 'public/images/baby-gallery/baby-05.jpg',
-      alt: 'Baby Rafu smiling during tummy time beside his elephant toy',
+      alt: 'Baby Rafeal smiling during tummy time beside his elephant toy',
       caption: 'Little Hands, Big Dreams'
     },
     {
       src: 'public/images/baby-gallery/baby-06.jpg',
-      alt: 'Baby Rafu outdoors with soft curls and a sweet smile',
+      alt: 'Baby Rafeal outdoors with soft curls and a sweet smile',
       caption: 'Sweet Curly Smiles'
     },
     {
       src: 'public/images/baby-gallery/baby-07.jpg',
-      alt: 'Baby Rafu grinning happily in his fox t-shirt',
+      alt: 'Baby Rafeal grinning happily in his fox t-shirt',
       caption: 'Pure Joy Every Day'
     },
     {
       src: 'public/images/baby-gallery/baby-08.jpg',
-      alt: 'Baby Rafu looking up full of wonder',
+      alt: 'Baby Rafeal looking up full of wonder',
       caption: 'Growing Up So Fast'
     },
     {
       src: 'public/images/baby-gallery/baby-09.jpg',
-      alt: 'Baby Rafu playing with his colorful ball',
+      alt: 'Baby Rafeal playing with his colorful ball',
       caption: 'Curious Little Explorer'
     },
     {
       src: 'public/images/baby-gallery/baby-10.jpg',
-      alt: 'Baby Rafu held warmly in Dad arms outdoors',
+      alt: 'Baby Rafeal held warmly in Dad arms outdoors',
       caption: 'Held Safe & Loved'
     },
     {
       src: 'public/images/baby-gallery/baby-11.jpg',
-      alt: 'Baby Rafu waving hello with a joyful smile',
+      alt: 'Baby Rafeal waving hello with a joyful smile',
       caption: 'Hello Big World!'
     },
     {
       src: 'public/images/baby-gallery/baby-12.jpg',
-      alt: 'Mom and Dad lifting baby Rafu joyfully at sunset',
+      alt: 'Mom and Dad lifting baby Rafeal joyfully at sunset',
       caption: 'Forever Our Baby'
     }
   ];
 
   const DEFAULT_EVENT_DATA = {
-    nickName: 'Rafu',
+    nickName: 'Rafeal',
     fullName: 'Rafael Richy Benedict',
     eventDate: '2026-12-09', // December 9th
     eventTime: '16:30',      // 24h
@@ -91,7 +91,9 @@
   try {
     const savedData = localStorage.getItem('rafu_event_data_v2');
     if (savedData) {
-      eventData = { ...DEFAULT_EVENT_DATA, ...JSON.parse(savedData) };
+      const parsed = JSON.parse(savedData);
+      if (parsed.nickName === 'Rafu') parsed.nickName = 'Rafeal';
+      eventData = { ...DEFAULT_EVENT_DATA, ...parsed };
     }
   } catch (e) {
     console.warn('LocalStorage error:', e);
@@ -810,7 +812,7 @@
         <div class="album-slide-ambient" style="background-image: url('${escapeHtml(photo.src)}');" aria-hidden="true"></div>
         <img
           src="${escapeHtml(photo.src)}"
-          alt="${escapeHtml(photo.alt || 'Baby Rafu memory')}"
+          alt="${escapeHtml(photo.alt || 'Baby Rafeal memory')}"
           class="album-slide-img"
           loading="${idx < 2 ? 'eager' : 'lazy'}"
           decoding="async"
@@ -983,7 +985,7 @@
     const photo = BABY_GALLERY_PHOTOS[currentSlideIndex];
     if (!photo || !photoViewerImg) return;
     photoViewerImg.src = photo.src;
-    photoViewerImg.alt = photo.alt || 'Baby Rafu Full View';
+    photoViewerImg.alt = photo.alt || 'Baby Rafeal Full View';
     if (photoViewerCaption) photoViewerCaption.textContent = photo.caption || '';
     if (lightboxCounter) lightboxCounter.textContent = `${currentSlideIndex + 1} / ${BABY_GALLERY_PHOTOS.length}`;
   }
@@ -1005,8 +1007,8 @@
     if (!photoViewerModal) return;
     isLightboxGalleryMode = false;
     photoViewerImg.src = src;
-    photoViewerImg.alt = caption || 'Baby Rafu Full View';
-    if (photoViewerCaption) photoViewerCaption.textContent = caption || 'Baby Rafu - Our Little Star';
+    photoViewerImg.alt = caption || 'Baby Rafeal Full View';
+    if (photoViewerCaption) photoViewerCaption.textContent = caption || 'Baby Rafeal - Our Little Star';
     if (lightboxPrevBtn) lightboxPrevBtn.style.display = 'none';
     if (lightboxNextBtn) lightboxNextBtn.style.display = 'none';
     if (lightboxCounter) lightboxCounter.style.display = 'none';
@@ -1125,7 +1127,7 @@
   if (shareInviteBtn) {
     shareInviteBtn.addEventListener('click', async () => {
       const shareTitle = `${eventData.nickName}'s 1st Birthday Celebration!`;
-      const shareText = `You're warmly invited to celebrate ${eventData.fullName}'s (Rafu) 1st Birthday on ${eventData.eventDate} at ${eventData.venueName}! RSVP here:`;
+      const shareText = `You're warmly invited to celebrate ${eventData.fullName}'s (Rafeal) 1st Birthday on ${eventData.eventDate} at ${eventData.venueName}! RSVP here:`;
       const shareUrl = window.location.href;
 
       if (navigator.share) {
