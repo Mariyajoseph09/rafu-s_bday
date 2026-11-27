@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" width="240" height="120">
+  <defs>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#FDFBF7"/>
+      <stop offset="100%" stop-color="#F2EBE1"/>
+    </linearGradient>
+    <filter id="softCloudShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#807060" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softCloudShadow)">
+    <!-- Fluffy Cloud Shape -->
+    <path d="M 50 90 
+             A 30 30 0 0 1 70 42 
+             A 42 42 0 0 1 140 32 
+             A 38 38 0 0 1 195 50 
+             A 28 28 0 0 1 205 90 
+             Z" 
+          fill="url(#cloudGrad)" stroke="#ECE4D8" stroke-width="2"/>
+    <!-- Cute Soft Rosy Cheeks if stylized -->
+    <circle cx="85" cy="72" r="6" fill="#F8C5CE" opacity="0.45"/>
+    <circle cx="155" cy="72" r="6" fill="#F8C5CE" opacity="0.45"/>
+    <!-- Sleeping / Happy Face (Subtle) -->
+    <path d="M 100 68 Q 106 72 112 68" stroke="#A89A88" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 128 68 Q 134 72 140 68" stroke="#A89A88" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 117 76 Q 120 79 123 76" stroke="#C5A059" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

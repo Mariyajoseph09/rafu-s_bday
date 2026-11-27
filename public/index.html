@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafu Turns One! • 1st Birthday Celebration</title>
+  <meta name="description" content="You're invited to celebrate Rafael Richy Benedict's (Rafu) 1st Birthday Celebration in a Magical Storybook Wonderland!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧸</text></svg>">
+</head>
+<body>
+  <!-- Ambient Gold Dust, Confetti & Drifting Sky Particles -->
+  <div class="stars-container" id="starsContainer"></div>
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- ==============================================
+       SCENIC GARDEN BACKGROUND DECORATIONS (TREES, BUTTERFLIES, CLOUDS)
+       ============================================== -->
+  <aside class="wonderland-scenery" aria-hidden="true">
+    <!-- Large Illustrated Nursery Trees on Outer Canvas Edges -->
+    <div class="scenic-tree scenic-tree-left">
+      <img src="assets/decorations/pastel_tree_left.svg" alt="" class="tree-svg tree-svg-left">
+    </div>
+    <div class="scenic-tree scenic-tree-right">
+      <img src="assets/decorations/pastel_tree_right.svg" alt="" class="tree-svg tree-svg-right">
+    </div>
+
+    <!-- Floating Fluffy Clouds in Sky -->
+    <div class="floating-sky-cloud cloud-pos-1">
+      <img src="assets/decorations/fluffy_cloud.svg" alt="" class="cloud-svg">
+    </div>
+    <div class="floating-sky-cloud cloud-pos-2">
+      <img src="assets/decorations/fluffy_cloud.svg" alt="" class="cloud-svg">
+    </div>
+
+    <!-- Delicate Fluttering Butterflies -->
+    <div class="scenic-butterfly butterfly-flight-1">
+      <img src="assets/decorations/butterfly.svg" alt="" class="butterfly-svg">
+    </div>
+    <div class="scenic-butterfly butterfly-flight-2">
+      <img src="assets/decorations/butterfly.svg" alt="" class="butterfly-svg">
+    </div>
+  </aside>
+
+  <!-- Top Sticky Navigation & Music Bar -->
+  <header class="app-header-single">
+    <div class="header-container">
+      <a href="#heroSection" class="header-logo-badge" aria-label="Rafu Turns One Home">
+        <span class="logo-bear" aria-hidden="true">🧸</span>
+        <span class="logo-text">RAFU TURNS ONE</span>
+      </a>
+      
+      <nav class="header-quick-links" aria-label="Quick Navigation">
+        <a href="#detailsSection" class="quick-link">DETAILS</a>
+        <a href="#gallerySection" class="quick-link">GALLERY</a>
+        <a href="#trainSection" class="quick-link">TOY TRAIN</a>
+        <a href="#countdownSection" class="quick-link">COUNTDOWN</a>
+        <a href="#rsvpSection" class="quick-link highlight-rsvp">RSVP</a>
+      </nav>
+
+      <div class="header-right-controls">
+        <!-- Music Box Audio Player Toggle -->
+        <button class="audio-toggle-btn" id="audioToggleBtn" title="Play / Pause Birthday Lullaby" aria-label="Toggle Birthday Lullaby Music">
+          <span class="music-icon" id="musicIcon">🎵</span>
+          <span class="music-wave" id="musicWave"></span>
+        </button>
+
+        <!-- Responsive Mobile Hamburger Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Collapsible Mobile Navigation Drawer -->
+    <nav class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation" aria-hidden="true">
+      <div class="mobile-nav-inner">
+        <a href="#detailsSection" class="mobile-nav-link">
+          <span class="mobile-nav-icon" aria-hidden="true">📅</span>
+          <span>Details</span>
+        </a>
+        <a href="#gallerySection" class="mobile-nav-link">
+          <span class="mobile-nav-icon" aria-hidden="true">✨</span>
+          <span>Gallery</span>
+        </a>
+        <a href="#trainSection" class="mobile-nav-link">
+          <span class="mobile-nav-icon" aria-hidden="true">🚂</span>
+          <span>Toy Train</span>
+        </a>
+        <a href="#countdownSection" class="mobile-nav-link">
+          <span class="mobile-nav-icon" aria-hidden="true">⏳</span>
+          <span>Countdown</span>
+        </a>
+        <a href="#rsvpSection" class="mobile-nav-link mobile-nav-rsvp">
+          <span class="mobile-nav-icon" aria-hidden="true">💌</span>
+          <span>RSVP</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Single Full-Screen Unified Invitation Content -->
+  <main class="invitation-main-content">
+
+    <!-- ==============================================
+         HERO SECTION: MINIMAL VINTAGE TEDDY BEAR INVITATION CARD
+         ============================================== -->
+    <section class="main-hero-section vintage-hero-card hero-intro-active" id="heroSection">
+
+      <!-- Top Hanging Brown & Beige Gingham Bunting -->
+      <div class="hero-gingham-bunting" aria-hidden="true">
+        <img src="assets/decorations/gingham_bunting.svg" alt="" class="gingham-bunting-img">
+      </div>
+
+      <!-- Minimal Edge Decorations: Watercolor Clouds, Golden Stars, Sparkles & Subtle Leaves -->
+      <div class="hero-vintage-decor" aria-hidden="true">
+        <!-- Fluffy Watercolor Clouds on Both Sides -->
+        <div class="hero-deco-cloud hero-cloud-left">
+          <img src="assets/decorations/watercolor_cloud.svg" alt="" class="hero-cloud-svg">
+        </div>
+        <div class="hero-deco-cloud hero-cloud-right">
+          <img src="assets/decorations/watercolor_cloud.svg" alt="" class="hero-cloud-svg">
+        </div>
+
+        <!-- Tiny Golden Stars & Occasional Floating Sparkles -->
+        <span class="vintage-star vs-1">★</span>
+        <span class="vintage-star vs-2">✦</span>
+        <span class="vintage-star vs-3">★</span>
+        <span class="vintage-star vs-4">★</span>
+        <span class="vintage-star vs-5">✦</span>
+        <span class="vintage-sparkle vsp-1">✦</span>
+        <span class="vintage-sparkle vsp-2">✧</span>
+        <span class="vintage-sparkle vsp-3">✦</span>
+
+        <!-- Subtle Decorative Corner Leaves -->
+        <div class="vintage-leaf-accent vleaf-left">
+          <svg viewBox="0 0 48 48" width="38" height="38">
+            <path d="M8 40 C12 24, 24 12, 40 8 C34 24, 24 36, 8 40 Z" fill="#C7B69D" opacity="0.38"/>
+            <path d="M8 40 C20 28, 30 18, 40 8" stroke="#A68F72" stroke-width="1.1" fill="none" opacity="0.55"/>
+          </svg>
+        </div>
+        <div class="vintage-leaf-accent vleaf-right">
+          <svg viewBox="0 0 48 48" width="38" height="38">
+            <path d="M40 40 C36 24, 24 12, 8 8 C14 24, 24 36, 40 40 Z" fill="#C7B69D" opacity="0.38"/>
+            <path d="M40 40 C28 28, 18 18, 8 8" stroke="#A68F72" stroke-width="1.1" fill="none" opacity="0.55"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- ONE Centered Plush Beige Teddy Bear Holding Two Floating Balloons -->
+      <div class="hero-center-bear-wrap" title="Tap for birthday magic ✨">
+        <img src="assets/animals/vintage_hero_bear.svg" alt="Adorable plush beige teddy bear wearing a beige bow and holding two floating balloons" class="vintage-hero-bear-img">
+      </div>
+
+      <!-- Centered Birthday Invitation Typography -->
+      <div class="invite-header-text vintage-invite-text">
+        <h3 class="subtitle-serif hero-intro-invited">You're invited!</h3>
+        <p class="eyebrow-text hero-intro-sub">TO A VERY SPECIAL</p>
+        <h1 class="script-title hero-intro-birthday">Birthday</h1>
+        <p class="eyebrow-text tracking-wide hero-intro-cel">CELEBRATION</p>
+
+        <div class="vintage-hero-divider" aria-hidden="true">
+          <span class="vh-line"></span>
+          <span class="vh-star">✦</span>
+          <span class="vh-line"></span>
+        </div>
+
+        <div class="celebrant-title-wrap hero-intro-name">
+          <h2 class="celebrant-name" id="displayNickName">Rafu Turns One!</h2>
+        </div>
+        <p class="hero-date-highlight hero-intro-date">December 9, 2026 <span class="hero-date-heart" aria-label="heart">❤️</span></p>
+      </div>
+
+      <!-- Kraft Envelope Peek with Baby Rafu's Real Smiling Portrait -->
+      <div class="envelope-peek-card" id="envelopePeekCard">
+        <div class="envelope-pocket">
+          <div class="envelope-flap"></div>
+          <div class="baby-photo-frame" id="babyPhotoTrigger" title="Click to view Rafu's smiling portrait">
+            <img src="assets/rafu_photo1.jpg" alt="Rafael Richy Benedict (Rafu)" class="baby-portrait-img" id="mainBabyPhoto">
+            <div class="photo-shine"></div>
+          </div>
+          <div class="envelope-heart-seal pulse-heart" id="heartSeal" title="Sealed with Love">
+            <span>♥</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="celebrant-fullname" id="displayFullName">Rafael Richy Benedict</p>
+    </section>
+
+    <!-- ==============================================
+         SECTION 2: EVENT DETAILS (DATE, TIME, VENUE)
+         ============================================== -->
+    <section class="event-details-section reveal-on-scroll" id="detailsSection">
+      
+      <div class="event-details-grid">
+        <!-- Date Card with Calendar & Love Emoji -->
+        <div class="detail-pill-card date-card" id="dateCardScrollTrigger" role="button" tabindex="0" title="View Rafu's December 2026 Birthday Calendar">
+          <div class="detail-icon-wrap date-icon-wrap">
+            <span class="cal-emoji-icon">📅</span>
+          </div>
+          <div class="detail-text-group">
+            <span class="detail-label" id="cardMonth">DECEMBER</span>
+            <div class="date-with-heart">
+              <span class="detail-value highlight-num" id="cardDay">09</span>
+              <span class="date-love-emoji">❤️</span>
+            </div>
+            <span class="detail-sub" id="cardYear">2026</span>
+          </div>
+        </div>
+
+        <!-- Time Card -->
+        <div class="detail-pill-card time-card">
+          <div class="detail-icon-wrap">
+            <svg class="detail-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>
+          </div>
+          <div class="detail-text-group">
+            <span class="detail-label">TIME</span>
+            <span class="detail-value highlight-num" id="cardTime">04:30</span>
+            <span class="detail-sub" id="cardTimeAmPm">PM</span>
+          </div>
+        </div>
+
+        <!-- Venue Card with Direct Google Maps Link -->
+        <a href="https://goo.gl/maps/j1ZFTZy9tnqqyLXz6?g_st=aw" target="_blank" rel="noopener noreferrer" class="detail-pill-card venue-card" id="venueCardClickable" title="Click to open Google Maps location">
+          <div class="detail-icon-wrap venue-icon-wrap">
+            <svg class="detail-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+          </div>
+          <div class="detail-text-group">
+            <span class="detail-label">VENUE</span>
+            <span class="detail-value venue-name-text" id="cardVenueName">Celebration Venue</span>
+            <span class="detail-sub venue-city-text" id="cardVenueCity">Tap for Google Maps 📍</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Garden Flower Bush with Bunny Peeking -->
+      <div class="scenic-garden-hedge" aria-hidden="true">
+        <div class="bunny-hedge-wrap">
+          <img src="assets/animals/bunny_peeking.svg" alt="Bunny Peeking from Garden Bush" class="bunny-peeking-hedge-img">
+        </div>
+        <img src="assets/decorations/garden_bushes.svg" alt="Garden Bush with Flowers and Mushrooms" class="hedge-bushes-img">
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 2B: ILLUSTRATED BIRTHDAY CALENDAR (DEC 2026)
+         ============================================== -->
+    <section class="birthday-calendar-section reveal-on-scroll" id="calendarSection" aria-label="December 2026 Birthday Calendar">
+      <div class="calendar-keepsake-card">
+        <!-- Soft Watercolor Corner Blossoms & Floating Leaves -->
+        <div class="cal-watercolor-wash" aria-hidden="true"></div>
+
+        <!-- Floating Botanical Leaves (Top Left & Bottom Right) -->
+        <div class="cal-deco-leaf cal-leaf-tl" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="100%" height="100%">
+            <path d="M12 52 C16 32, 30 16, 52 10 C46 32, 32 48, 12 52 Z" fill="#9EB096" opacity="0.72"/>
+            <path d="M12 52 C26 36, 38 24, 52 10" stroke="#6E8266" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M24 38 C22 28, 26 22, 32 18" stroke="#6E8266" stroke-width="1" fill="none" opacity="0.6"/>
+            <circle cx="16" cy="22" r="5" fill="#F6DFDA"/>
+            <circle cx="16" cy="22" r="2" fill="#D58A82"/>
+          </svg>
+        </div>
+        <div class="cal-deco-leaf cal-leaf-tr" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="100%" height="100%">
+            <path d="M52 52 C48 32, 34 16, 12 10 C18 32, 32 48, 52 52 Z" fill="#A9BAA0" opacity="0.72"/>
+            <path d="M52 52 C38 36, 26 24, 12 10" stroke="#6E8266" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <circle cx="46" cy="22" r="4.5" fill="#FDF0D5"/>
+            <circle cx="46" cy="22" r="1.8" fill="#C9A25B"/>
+          </svg>
+        </div>
+        <div class="cal-deco-leaf cal-leaf-bl" aria-hidden="true">
+          <svg viewBox="0 0 56 56" width="100%" height="100%">
+            <path d="M8 46 C10 28, 22 14, 44 10 C38 28, 26 42, 8 46 Z" fill="#9DB094" opacity="0.58"/>
+            <path d="M8 46 C22 32, 32 22, 44 10" stroke="#6E8266" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <circle cx="38" cy="40" r="4.5" fill="#FBE8E4"/>
+            <circle cx="38" cy="40" r="1.8" fill="#D58A82"/>
+          </svg>
+        </div>
+        <div class="cal-deco-leaf cal-leaf-br" aria-hidden="true">
+          <svg viewBox="0 0 56 56" width="100%" height="100%">
+            <path d="M48 46 C46 28, 34 14, 12 10 C18 28, 30 42, 48 46 Z" fill="#A9BAA0" opacity="0.58"/>
+            <path d="M48 46 C34 32, 24 22, 12 10" stroke="#6E8266" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <circle cx="18" cy="40" r="4" fill="#FFF3D6"/>
+            <circle cx="18" cy="40" r="1.7" fill="#C9A25B"/>
+          </svg>
+        </div>
+
+        <!-- Twinkling Decorative Stars -->
+        <div class="cal-twinkle-stars" aria-hidden="true">
+          <span class="cal-star cal-star-1">✦</span>
+          <span class="cal-star cal-star-2">★</span>
+          <span class="cal-star cal-star-3">✦</span>
+          <span class="cal-star cal-star-4">★</span>
+          <span class="cal-star cal-star-5">✦</span>
+        </div>
+
+        <!-- Top Illustrated Winter Teddy Bear with Flowers & Leaves -->
+        <div class="cal-bear-illustration-wrap">
+          <svg class="cal-winter-bear-svg" viewBox="0 0 260 148" width="220" height="125" role="img" aria-label="Cute teddy bear wearing a cozy winter hat">
+            <defs>
+              <radialGradient id="calBearFur" cx="42%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#F5E2CE"/>
+                <stop offset="62%" stop-color="#DDBB95"/>
+                <stop offset="100%" stop-color="#BE9468"/>
+              </radialGradient>
+              <radialGradient id="calSnoutGrad" cx="50%" cy="40%" r="58%">
+                <stop offset="0%" stop-color="#FFF9F1"/>
+                <stop offset="100%" stop-color="#EFE0CC"/>
+              </radialGradient>
+              <linearGradient id="calHatCrown" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E7A299"/>
+                <stop offset="55%" stop-color="#D48179"/>
+                <stop offset="100%" stop-color="#B96861"/>
+              </linearGradient>
+              <linearGradient id="calHatBrim" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FAF4EA"/>
+                <stop offset="100%" stop-color="#E8DEC9"/>
+              </linearGradient>
+              <linearGradient id="calScarfGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#96A88F"/>
+                <stop offset="50%" stop-color="#84977D"/>
+                <stop offset="100%" stop-color="#708269"/>
+              </linearGradient>
+              <filter id="calBearShadow" x="-15%" y="-15%" width="130%" height="135%">
+                <feDropShadow dx="0" dy="4" stdDeviation="3.5" flood-color="#5D4632" flood-opacity="0.14"/>
+              </filter>
+            </defs>
+
+            <!-- Background Foliage Sprigs Flanking Bear -->
+            <g class="cal-bear-foliage">
+              <!-- Left eucalyptus & blossom -->
+              <path d="M62 122 C44 112, 32 96, 28 78" stroke="#7A8E73" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <ellipse cx="44" cy="108" rx="9" ry="5" transform="rotate(-32 44 108)" fill="#A3B69B"/>
+              <ellipse cx="34" cy="94" rx="8.5" ry="4.5" transform="rotate(-20 34 94)" fill="#B6C6AE"/>
+              <ellipse cx="51" cy="95" rx="7" ry="4" transform="rotate(25 51 95)" fill="#8FA387"/>
+              <!-- Little flower left -->
+              <g transform="translate(26, 76)">
+                <circle cx="0" cy="-5" r="3.6" fill="#FBE8E4"/>
+                <circle cx="4.8" cy="-1.5" r="3.6" fill="#FBE8E4"/>
+                <circle cx="3" cy="4" r="3.6" fill="#FBE8E4"/>
+                <circle cx="-3" cy="4" r="3.6" fill="#FBE8E4"/>
+                <circle cx="-4.8" cy="-1.5" r="3.6" fill="#FBE8E4"/>
+                <circle cx="0" cy="0" r="2.6" fill="#D9A85B"/>
+              </g>
+
+              <!-- Right eucalyptus & blossom -->
+              <path d="M198 122 C216 112, 228 96, 232 78" stroke="#7A8E73" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <ellipse cx="216" cy="108" rx="9" ry="5" transform="rotate(32 216 108)" fill="#A3B69B"/>
+              <ellipse cx="226" cy="94" rx="8.5" ry="4.5" transform="rotate(20 226 94)" fill="#B6C6AE"/>
+              <ellipse cx="209" cy="95" rx="7" ry="4" transform="rotate(-25 209 95)" fill="#8FA387"/>
+              <!-- Little flower right -->
+              <g transform="translate(234, 76)">
+                <circle cx="0" cy="-5" r="3.6" fill="#FFF4DC"/>
+                <circle cx="4.8" cy="-1.5" r="3.6" fill="#FFF4DC"/>
+                <circle cx="3" cy="4" r="3.6" fill="#FFF4DC"/>
+                <circle cx="-3" cy="4" r="3.6" fill="#FFF4DC"/>
+                <circle cx="-4.8" cy="-1.5" r="3.6" fill="#FFF4DC"/>
+                <circle cx="0" cy="0" r="2.6" fill="#D58A82"/>
+              </g>
+            </g>
+
+            <!-- Bouncing Bear Group -->
+            <g class="cal-bear-bounce-group" filter="url(#calBearShadow)">
+              <!-- Ears (tucked nicely beside winter hat) -->
+              <circle cx="94" cy="56" r="13.5" fill="url(#calBearFur)"/>
+              <circle cx="94" cy="56" r="7.5" fill="#F6DFCA"/>
+              <circle cx="166" cy="56" r="13.5" fill="url(#calBearFur)"/>
+              <circle cx="166" cy="56" r="7.5" fill="#F6DFCA"/>
+
+              <!-- Bear Shoulders / Body -->
+              <ellipse cx="130" cy="126" rx="34" ry="20" fill="url(#calBearFur)"/>
+
+              <!-- Bear Head -->
+              <ellipse cx="130" cy="82" rx="38" ry="33" fill="url(#calBearFur)"/>
+
+              <!-- Cozy Knitted Winter Hat -->
+              <g class="cal-bear-hat">
+                <!-- Hat Crown -->
+                <path d="M94 64 C96 34, 114 23, 130 23 C146 23, 164 34, 166 64 Z" fill="url(#calHatCrown)"/>
+                <!-- Sage Knit Stripe -->
+                <path d="M97 53 Q130 47 163 53" stroke="#8FA387" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+                <path d="M97 53 Q130 47 163 53" stroke="#F7EFE2" stroke-width="1.5" stroke-dasharray="3 4" fill="none"/>
+                <!-- Folded Cream Knit Brim -->
+                <rect x="90" y="56" width="80" height="15" rx="7.5" fill="url(#calHatBrim)" stroke="#D9CCB6" stroke-width="1"/>
+                <!-- Ribbed knit lines on brim -->
+                <path d="M102 58 V69 M113 57 V70 M124 57 V70 M136 57 V70 M147 57 V70 M158 58 V69" stroke="#D8CBB4" stroke-width="1.2" stroke-linecap="round"/>
+                <!-- Fluffy Pom-Pom -->
+                <circle cx="130" cy="19" r="9.5" fill="#FFFBF4" stroke="#E4D7C2" stroke-width="1"/>
+                <circle cx="127" cy="16" r="3.5" fill="#FFFFFF" opacity="0.8"/>
+              </g>
+
+              <!-- Snout -->
+              <ellipse cx="130" cy="91" rx="15.5" ry="11.5" fill="url(#calSnoutGrad)"/>
+              <!-- Nose -->
+              <ellipse cx="130" cy="86.5" rx="5" ry="3.4" fill="#4B3626"/>
+              <ellipse cx="128.5" cy="85.5" rx="1.5" ry="0.9" fill="#8C6D55" opacity="0.6"/>
+              <!-- Sweet Smile -->
+              <path d="M130 90 L130 94" stroke="#4B3626" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M124.5 94 Q130 99 135.5 94" fill="none" stroke="#4B3626" stroke-width="1.6" stroke-linecap="round"/>
+
+              <!-- Sparkling Eyes -->
+              <circle cx="114.5" cy="80" r="3.6" fill="#352418"/>
+              <circle cx="115.8" cy="78.7" r="1.2" fill="#FFFFFF"/>
+              <circle cx="145.5" cy="80" r="3.6" fill="#352418"/>
+              <circle cx="146.8" cy="78.7" r="1.2" fill="#FFFFFF"/>
+
+              <!-- Rosy Cheeks -->
+              <ellipse cx="105" cy="90" rx="5.5" ry="3.2" fill="#E89A90" opacity="0.58"/>
+              <ellipse cx="155" cy="90" rx="5.5" ry="3.2" fill="#E89A90" opacity="0.58"/>
+
+              <!-- Cozy Winter Scarf -->
+              <path d="M98 109 Q130 120 162 109 Q164 118 159 121 Q130 131 101 121 Q96 118 98 109 Z" fill="url(#calScarfGrad)"/>
+              <path d="M142 118 L149 136 Q143 139 137 136 L133 121 Z" fill="#7D9176"/>
+              <path d="M104 114 Q130 123 156 114" stroke="#EDE6D8" stroke-width="1.4" stroke-dasharray="4 4" fill="none" opacity="0.8"/>
+
+              <!-- Little Paws Resting on Calendar Top -->
+              <ellipse cx="101" cy="133" rx="11" ry="8" fill="url(#calBearFur)"/>
+              <ellipse cx="101" cy="134" rx="6" ry="4.2" fill="#F6DFCA"/>
+              <ellipse cx="159" cy="133" rx="11" ry="8" fill="url(#calBearFur)"/>
+              <ellipse cx="159" cy="134" rx="6" ry="4.2" fill="#F6DFCA"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Calendar Month & Year Heading -->
+        <div class="cal-header-block">
+          <span class="cal-eyebrow-pill">SAVE THE DATE • RAFU TURNS ONE</span>
+          <div class="cal-month-year-row">
+            <h3 class="cal-month-script">December</h3>
+            <span class="cal-year-serif">2026</span>
+          </div>
+          <div class="cal-header-divider" aria-hidden="true">
+            <span class="cal-div-line"></span>
+            <span class="cal-div-star">✦</span>
+            <span class="cal-div-line"></span>
+          </div>
+        </div>
+
+        <!-- Clean 7-Column Calendar Grid -->
+        <div class="cal-grid-wrapper">
+          <div class="cal-weekdays-row" role="row">
+            <span class="cal-weekday" role="columnheader">SUN</span>
+            <span class="cal-weekday" role="columnheader">MON</span>
+            <span class="cal-weekday" role="columnheader">TUE</span>
+            <span class="cal-weekday cal-weekday-wed" role="columnheader">WED</span>
+            <span class="cal-weekday" role="columnheader">THU</span>
+            <span class="cal-weekday" role="columnheader">FRI</span>
+            <span class="cal-weekday" role="columnheader">SAT</span>
+          </div>
+
+          <div class="cal-days-grid" role="grid" aria-label="December 2026 Dates">
+            <!-- Week 1: Dec 1 is Tuesday -->
+            <span class="cal-day-cell cal-day-empty" aria-hidden="true"></span>
+            <span class="cal-day-cell cal-day-empty" aria-hidden="true"></span>
+            <span class="cal-day-cell">1</span>
+            <span class="cal-day-cell">2</span>
+            <span class="cal-day-cell">3</span>
+            <span class="cal-day-cell">4</span>
+            <span class="cal-day-cell">5</span>
+
+            <!-- Week 2: Dec 9 is Wednesday (Special Birthday Date) -->
+            <span class="cal-day-cell">6</span>
+            <span class="cal-day-cell">7</span>
+            <span class="cal-day-cell">8</span>
+            <button type="button" class="cal-day-cell cal-day-birthday" id="calBirthdayCell" aria-label="December 9, 2026 - Rafu's First Birthday!" title="Rafu's 1st Birthday! Tap for birthday magic ✨">
+              <!-- Pulsing Dusty Rose Watercolor Heart Around 9 -->
+              <svg class="bday-heart-svg" viewBox="0 0 64 60" aria-hidden="true">
+                <defs>
+                  <linearGradient id="bdayRoseHeart" x1="15%" y1="10%" x2="85%" y2="90%">
+                    <stop offset="0%" stop-color="#EA9A93"/>
+                    <stop offset="50%" stop-color="#D4746E"/>
+                    <stop offset="100%" stop-color="#B85C56"/>
+                  </linearGradient>
+                </defs>
+                <path class="bday-heart-outer-ring" d="M32 54 C32 54 6 38 6 20 C6 10 14 4 22.5 4 C27.8 4 30.8 7 32 10.2 C33.2 7 36.2 4 41.5 4 C50 4 58 10 58 20 C58 38 32 54 32 54 Z" fill="none" stroke="#DF988F" stroke-width="2.5" opacity="0.65"/>
+                <path class="bday-heart-fill" d="M32 51.5 C32 51.5 8.5 36.5 8.5 20.5 C8.5 11.8 15.2 6.5 22.8 6.5 C27.8 6.5 30.8 9.6 32 12.8 C33.2 9.6 36.2 6.5 41.2 6.5 C48.8 6.5 55.5 11.8 55.5 20.5 C55.5 36.5 32 51.5 32 51.5 Z" fill="url(#bdayRoseHeart)"/>
+                <path d="M16 14 C13.5 17 13.5 21.5 16 25" stroke="#FFF4F2" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.55"/>
+              </svg>
+              <span class="bday-day-num">9</span>
+              <!-- Occasional Floating Mini Hearts -->
+              <span class="cal-float-heart fh-1" aria-hidden="true">♥</span>
+              <span class="cal-float-heart fh-2" aria-hidden="true">♥</span>
+              <span class="cal-float-heart fh-3" aria-hidden="true">♡</span>
+            </button>
+            <span class="cal-day-cell">10</span>
+            <span class="cal-day-cell">11</span>
+            <span class="cal-day-cell">12</span>
+
+            <!-- Week 3 -->
+            <span class="cal-day-cell">13</span>
+            <span class="cal-day-cell">14</span>
+            <span class="cal-day-cell">15</span>
+            <span class="cal-day-cell">16</span>
+            <span class="cal-day-cell">17</span>
+            <span class="cal-day-cell">18</span>
+            <span class="cal-day-cell">19</span>
+
+            <!-- Week 4 -->
+            <span class="cal-day-cell">20</span>
+            <span class="cal-day-cell">21</span>
+            <span class="cal-day-cell">22</span>
+            <span class="cal-day-cell">23</span>
+            <span class="cal-day-cell">24</span>
+            <span class="cal-day-cell">25</span>
+            <span class="cal-day-cell">26</span>
+
+            <!-- Week 5 -->
+            <span class="cal-day-cell">27</span>
+            <span class="cal-day-cell">28</span>
+            <span class="cal-day-cell">29</span>
+            <span class="cal-day-cell">30</span>
+            <span class="cal-day-cell">31</span>
+            <span class="cal-day-cell cal-day-empty" aria-hidden="true"></span>
+            <span class="cal-day-cell cal-day-empty" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <!-- Caption Below Calendar -->
+        <div class="cal-footer-caption-wrap">
+          <div class="cal-special-caption">
+            <span class="cal-caption-heart" aria-hidden="true">❤️</span>
+            <span class="cal-caption-text">Rafu's Special Day!</span>
+            <span class="cal-caption-sparkle" aria-hidden="true">✦</span>
+          </div>
+          <p class="cal-sub-caption">Wednesday, December 9, 2026 • Turning One!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 4: ANIMATED TEDDY BEAR IN VINTAGE CAR
+         ============================================== -->
+    <section class="animated-car-showcase-section reveal-on-scroll">
+      <div class="car-showcase-card">
+        <div class="clouds-backdrop">
+          <div class="cloud cloud-1"></div>
+          <div class="cloud cloud-2"></div>
+        </div>
+        
+        <div class="car-illustration-container animated-car-wrap" id="carIllustration">
+          <div class="car-floating-balloons">
+            <span class="car-balloon balloon-sage" title="Pop me!">🎈</span>
+            <span class="car-balloon balloon-peach" title="Pop me!">🎈</span>
+            <span class="car-balloon balloon-gold" title="Pop me!">🎈</span>
+          </div>
+          <img src="assets/teddy_car.png" alt="Baby Teddy Bear in Vintage Green Car" class="art-img teddy-car-img" id="teddyCarImg">
+        </div>
+
+        <div class="foliage-bottom">
+          <span class="leaf leaf-left">🌿</span>
+          <span class="car-quote-text">"Cruising into One with Lots of Fun!"</span>
+          <span class="leaf leaf-right">🌿</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 5: ANIMATED BEAR HOLDING BALLOONS
+         ============================================== -->
+    <section class="animated-bear-balloons-section reveal-on-scroll">
+      <div class="bear-balloons-card">
+        <div class="card-top-sparkle">✦ ✨ ✦</div>
+        <h4 class="bear-story-title">"One Year of Sweet Bear Hugs!"</h4>
+        
+        <div class="interactive-bear-holder" id="interactiveBearHolder">
+          <img src="assets/animals/bear_balloons.svg" alt="Teddy Bear Holding Colorful Balloons" class="bear-balloons-svg" id="bearBalloonsSvg">
+          
+          <div class="floating-heart-bubble bubble-1" title="Tap to pop!">💖</div>
+          <div class="floating-heart-bubble bubble-2" title="Tap to pop!">⭐</div>
+        </div>
+
+        <p class="bear-caption">Tap the balloons for extra birthday magic! 🎈</p>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 6: "OUR LITTLE STAR" PHOTO GALLERY (WITH RAFU'S REAL PHOTOS)
+         ============================================== -->
+    <section class="section-card gallery-section reveal-on-scroll" id="gallerySection">
+      
+      <!-- Decorative Storybook Animals framing the Gallery -->
+      <div class="gallery-character-accents" aria-hidden="true">
+        <!-- Bear Holding Big Heart on Left -->
+        <div class="gallery-char-left" title="Holding all our love!">
+          <img src="assets/animals/bear_heart.svg" alt="Teddy Bear Holding Red Heart" class="gallery-animal-svg">
+        </div>
+        <!-- Two Small Rabbits Sitting Together on Right -->
+        <div class="gallery-char-right" title="Bunny friends!">
+          <img src="assets/animals/bunnies_together.svg" alt="Two Cuddled Rabbits" class="gallery-animal-svg">
+        </div>
+      </div>
+
+      <div class="section-header-wrap">
+        <span class="section-badge">MEMORIES</span>
+        <h3 class="section-heading">Our Little Star</h3>
+        <p class="section-subtext">365 days of giggles, cuddles, and baby smiles with Rafu!</p>
+      </div>
+
+      <!-- Gallery Grid with Rafu's REAL Photos + Animated Character in Polaroid Frames -->
+      <div class="photo-cards-carousel" id="photoCarousel">
+        
+        <!-- Real Photo 1: Rafu Smiling & Laughing -->
+        <div class="photo-item-card real-star-card" data-index="0" title="Click to view full photo">
+          <div class="photo-matte">
+            <img src="assets/rafu_photo1.jpg" alt="Rafu Joyful Big Smile" class="gallery-img">
+            <div class="photo-badge">Sweet Smiles ❤️</div>
+          </div>
+          <p class="photo-caption">"Pure joy & giggles every single day!"</p>
+        </div>
+
+        <!-- Real Photo 2: Rafu Playing with Toy Ball -->
+        <div class="photo-item-card real-star-card" data-index="1" title="Click to view full photo">
+          <div class="photo-matte">
+            <img src="assets/rafu_photo2.jpg" alt="Rafu Playing and Exploring" class="gallery-img">
+            <div class="photo-badge">Little Explorer 🧸</div>
+          </div>
+          <p class="photo-caption">"Curious, crawling & stealing hearts!"</p>
+        </div>
+
+        <!-- Animated Storybook Boy Character Card -->
+        <div class="photo-item-card animated-star-card" data-index="2" title="Click to view full photo">
+          <div class="photo-matte">
+            <img src="assets/rafu_animated.png" alt="Rafu Animated Cute Baby Boy" class="gallery-img">
+            <div class="photo-badge">Our Prince ✨</div>
+          </div>
+          <p class="photo-caption">"Full of wonder and sweet dreams!"</p>
+        </div>
+
+        <!-- Bunny with Balloon Milestone Accent Card -->
+        <div class="photo-item-card milestone-char-card" data-index="3">
+          <div class="photo-matte milestone-bunny-matte">
+            <img src="assets/animals/bunny_balloon.svg" alt="Cute Bunny Holding Birthday Balloon" class="milestone-bunny-img">
+            <div class="photo-badge">Dec 9th • Turns 1 🎂</div>
+          </div>
+          <p class="photo-caption">Ready for the big cake smash! ❤️</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 7: THE GRAND ANIMATED BIRTHDAY TOY TRAIN
+         ============================================== -->
+    <section class="toy-train-wonderland-section reveal-on-scroll" id="trainSection">
+      <div class="train-section-header">
+        <span class="train-badge">CHOO CHOO! 🚂</span>
+        <h3 class="train-heading">All Aboard the Birthday Express!</h3>
+        <p class="train-subtext">Carrying sweet teddy bears, fluffy bunnies, gifts, and balloons to Rafu's party!</p>
+      </div>
+
+      <!-- Moving Train Track Viewport -->
+      <div class="scenic-train-viewport">
+        <!-- Floating steam clouds above track -->
+        <div class="train-sky-clouds" aria-hidden="true">
+          <span class="track-cloud-drift c-drift-1">☁️</span>
+          <span class="track-cloud-drift c-drift-2">☁️</span>
+          <span class="track-star-twinkle t-star-1">✨</span>
+          <span class="track-star-twinkle t-star-2">⭐</span>
+        </div>
+
+        <!-- Horizontal Traveling Train Container -->
+        <div class="train-track-scroller" id="trainTrackScroller">
+          <img src="assets/train/birthday_train.svg" alt="Animated Birthday Toy Train Carrying Bears and Rabbits" class="birthday-train-svg-element">
+        </div>
+
+        <!-- Wooden Railroad Tracks & Pastel Meadow Flowers -->
+        <div class="railroad-ground">
+          <div class="rail-iron-line"></div>
+          <div class="rail-ties-pattern"></div>
+          <div class="meadow-grass-border">
+            <span class="flower-dot f-1">🌸</span>
+            <span class="flower-dot f-2">🌼</span>
+            <span class="flower-dot f-3">🌱</span>
+            <span class="flower-dot f-4">🌷</span>
+            <span class="flower-dot f-5">🌿</span>
+            <span class="flower-dot f-6">🍄</span>
+            <span class="flower-dot f-7">🌸</span>
+            <span class="flower-dot f-8">🌼</span>
+            <span class="flower-dot f-9">🌱</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 8: LIVE COUNTDOWN & DREAMY CELESTIAL DECOR
+         ============================================== -->
+    <section class="countdown-section reveal-on-scroll" id="countdownSection">
+      
+      <!-- Dreamy Characters: Bear on Cloud & Sleeping Bear on Crescent Moon -->
+      <div class="countdown-character-decorations" aria-hidden="true">
+        <div class="countdown-char-left" title="Teddy Bear on Cloud">
+          <img src="assets/animals/bear_cloud.svg" alt="Teddy Bear on Cloud" class="countdown-animal-svg float-bob">
+        </div>
+        <div class="countdown-char-right" title="Sweet Dreams under Crescent Moon">
+          <img src="assets/animals/bear_sleeping_moon.svg" alt="Sleeping Teddy Bear near Crescent Moon" class="countdown-animal-svg float-gentle">
+        </div>
+      </div>
+
+      <div class="countdown-heading-wrap">
+        <span class="countdown-star">★</span>
+        <h3 class="countdown-title">THE COUNTDOWN BEGINS</h3>
+        <span class="countdown-star">★</span>
+      </div>
+
+      <!-- 4-Box Digital Countdown Timer -->
+      <div class="countdown-display-card">
+        <div class="countdown-unit-box">
+          <span class="timer-digits" id="timerDays">00</span>
+          <span class="timer-unit-label">DAYS</span>
+        </div>
+        <span class="timer-separator">:</span>
+        <div class="countdown-unit-box">
+          <span class="timer-digits" id="timerHours">00</span>
+          <span class="timer-unit-label">HOURS</span>
+        </div>
+        <span class="timer-separator">:</span>
+        <div class="countdown-unit-box">
+          <span class="timer-digits" id="timerMins">00</span>
+          <span class="timer-unit-label">MINS</span>
+        </div>
+        <span class="timer-separator">:</span>
+        <div class="countdown-unit-box">
+          <span class="timer-digits" id="timerSecs">00</span>
+          <span class="timer-unit-label">SECS</span>
+        </div>
+      </div>
+
+      <!-- Animated Wooden Toys with Choo-Choo Steam Hearts -->
+      <div class="wooden-toys-wrapper">
+        <div class="train-steam-puff puff-1">♡</div>
+        <div class="train-steam-puff puff-2">♡</div>
+        <img src="assets/wooden_toys.png" alt="Vintage Wooden Stacking Rings, Train and Car" class="art-img wooden-toys-img" id="woodenToysImg">
+      </div>
+
+      <p class="script-footer-quote">
+        We can't wait to celebrate with you! <span class="heart-accent">♡</span>
+      </p>
+
+      <!-- Venue Map & Location Quick Actions -->
+      <div class="venue-action-banner">
+        <a href="https://goo.gl/maps/j1ZFTZy9tnqqyLXz6?g_st=aw" target="_blank" rel="noopener noreferrer" class="btn-outline pill-btn-small" id="getDirectionsBtn">
+          <span>📍</span>
+          <span>Open Google Maps</span>
+        </a>
+        <button class="btn-outline pill-btn-small" id="addToCalBtn">
+          <span>📅</span>
+          <span>Add to Calendar</span>
+        </button>
+        <button class="btn-outline pill-btn-small" id="shareInviteBtn">
+          <span>💬</span>
+          <span>Share Invite</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 9: RSVP SECTION (WITH BEAR HOLDING WELCOME SIGN)
+         ============================================== -->
+    <section class="rsvp-integrated-section reveal-on-scroll" id="rsvpSection">
+      
+      <!-- Bunting Banner Garland (Pastel Flags Swaying) -->
+      <div class="bunting-garland-wrap">
+        <img src="assets/decorations/bunting_flags.svg" alt="" class="bunting-flags-rsvp-img">
+        <div class="cloud-rsvp cloud-rsvp-left"></div>
+        <div class="cloud-rsvp cloud-rsvp-right"></div>
+      </div>
+
+      <!-- Teddy Bear Holding Welcome Sign -->
+      <div class="rsvp-bear-welcome-wrap">
+        <img src="assets/animals/bear_sign.svg" alt="Teddy Bear Holding RSVP Welcome Sign" class="bear-sign-svg">
+      </div>
+
+      <!-- RSVP Header -->
+      <div class="rsvp-header-text">
+        <h2 class="rsvp-title">Kindly RSVP</h2>
+        <p class="rsvp-deadline-text">by <span id="rsvpDeadlineDate">December 1st</span></p>
+        <div class="star-accent">★</div>
+      </div>
+
+      <!-- RSVP Interactive Form -->
+      <form class="rsvp-form" id="rsvpForm" onsubmit="return false;">
+        
+        <!-- Guest Name -->
+        <div class="form-group">
+          <label for="guestNameInput" class="form-label">Your Name</label>
+          <input type="text" id="guestNameInput" class="form-control" placeholder="Enter your name" required autocomplete="name">
+        </div>
+
+        <!-- Attendance Choice Buttons -->
+        <div class="form-group">
+          <label class="form-label">Will you join us to celebrate Rafu's Birthday?</label>
+          <div class="attendance-btn-group">
+            <button type="button" class="btn-choice active" id="btnAttendYes" data-value="yes">
+              YES, CAN'T WAIT!
+            </button>
+            <button type="button" class="btn-choice btn-choice-maybe" id="btnAttendNo" data-value="no">
+              SORRY, CAN'T MAKE IT
+            </button>
+          </div>
+        </div>
+
+        <!-- Guest Count -->
+        <div class="form-group" id="guestCountGroup">
+          <label for="guestCountInput" class="form-label">How many guests will attend? <span class="label-sub">(Count yourself)</span></label>
+          <div class="counter-input-wrap">
+            <button type="button" class="counter-btn" id="btnDecGuests" aria-label="Decrease guests">−</button>
+            <input type="number" id="guestCountInput" class="counter-field" value="2" min="1" max="10" readonly>
+            <button type="button" class="counter-btn" id="btnIncGuests" aria-label="Increase guests">+</button>
+          </div>
+        </div>
+
+        <!-- Wishes / Note -->
+        <div class="form-group">
+          <label for="guestMessageInput" class="form-label">A Sweet Wish for Rafu <span class="label-sub">(Optional)</span></label>
+          <textarea id="guestMessageInput" class="form-control form-textarea" placeholder="Write a sweet blessing or message for baby Rafu..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-submit-wrap">
+          <button type="submit" class="btn-primary pill-btn submit-rsvp-btn" id="btnSubmitRsvp">
+            <span>SUBMIT RSVP</span>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- RSVP Success Feedback Card -->
+      <div class="rsvp-success-card hidden" id="rsvpSuccessCard">
+        <div class="success-heart-icon">💝</div>
+        <h3 class="success-title">Thank You So Much!</h3>
+        <p class="success-message" id="successCustomMessage">We are thrilled to celebrate baby Rafu's 1st birthday with you!</p>
+        <div class="success-details-pill" id="successDetailsPill"></div>
+        <button type="button" class="btn-secondary pill-btn-small" id="btnEditRsvp">Change Response</button>
+      </div>
+
+      <!-- Bottom Watercolor Gifts & Balloons Decor -->
+      <div class="rsvp-bottom-decor">
+        <div class="decor-gift-box">
+          <span class="emoji-gift">🎁</span>
+          <span class="leaf-sprig">🌿</span>
+        </div>
+        <div class="decor-balloons">
+          <span class="emoji-balloon">🎈</span>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       MODALS & DRAWERS
+       ============================================== -->
+
+  <!-- Modal: Host RSVP Guest List Viewer -->
+  <div class="modal-backdrop hidden" id="hostDrawerModal" role="dialog" aria-modal="true" aria-labelledby="modalHostTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalHostTitle">📋 RSVP Responses (<span id="modalTotalGuests">0</span> Guests)</h3>
+        <button class="modal-close-btn" id="closeHostDrawerBtn" aria-label="Close RSVP list">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="rsvp-summary-stats">
+          <div class="stat-pill stat-attending">
+            <span class="stat-count" id="statYesCount">0</span>
+            <span class="stat-name">Attending</span>
+          </div>
+          <div class="stat-pill stat-declined">
+            <span class="stat-count" id="statNoCount">0</span>
+            <span class="stat-name">Declined</span>
+          </div>
+        </div>
+        <div class="guest-list-container" id="guestListContainer">
+          <p class="empty-list-notice">No RSVPs received yet. Be the first to RSVP!</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-outline" id="exportRsvpBtn">Export CSV</button>
+        <button class="btn-primary" id="closeHostDrawerBtn2">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Photo Viewer -->
+  <div class="modal-backdrop hidden" id="photoViewerModal" role="dialog" aria-modal="true" aria-label="Photo Viewer">
+    <div class="modal-card photo-viewer-card">
+      <button class="modal-close-btn" id="closePhotoViewerBtn" aria-label="Close photo viewer">&times;</button>
+      <div class="photo-viewer-image-wrap">
+        <img src="" id="photoViewerImg" alt="Baby Rafu Full View">
+      </div>
+      <p class="photo-viewer-caption" id="photoViewerCaption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="100%" height="100%">
+  <defs>
+    <!-- Gradients for Watercolor Feel -->
+    <radialGradient id="bearFurGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#EEDAC2"/>
+      <stop offset="65%" stop-color="#D7B48C"/>
+      <stop offset="100%" stop-color="#B88F63"/>
+    </radialGradient>
+    <radialGradient id="snoutGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FFF5E8"/>
+      <stop offset="100%" stop-color="#EBD8C1"/>
+    </radialGradient>
+    <!-- Balloon Gradients (Muted Sage, Peach, Gold) -->
+    <radialGradient id="balloonSage" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#D6E3D1"/>
+      <stop offset="50%" stop-color="#9CB395"/>
+      <stop offset="100%" stop-color="#6F8868"/>
+    </radialGradient>
+    <radialGradient id="balloonPeach" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FDE6D8"/>
+      <stop offset="55%" stop-color="#EBB39C"/>
+      <stop offset="100%" stop-color="#C9866C"/>
+    </radialGradient>
+    <radialGradient id="balloonGold" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFF1D0"/>
+      <stop offset="55%" stop-color="#E8C782"/>
+      <stop offset="100%" stop-color="#BF984B"/>
+    </radialGradient>
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#4A3B2B" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <style>
+    .balloon-cluster {
+      transform-origin: 120px 180px;
+      animation: floatBalloons 4s ease-in-out infinite alternate;
+    }
+    .balloon-1 { animation: swayB1 3.5s ease-in-out infinite alternate; transform-origin: 80px 70px; }
+    .balloon-2 { animation: swayB2 4.2s ease-in-out infinite alternate; transform-origin: 120px 45px; }
+    .balloon-3 { animation: swayB3 3.8s ease-in-out infinite alternate; transform-origin: 160px 75px; }
+    .bear-body-group {
+      animation: bearBreathing 3s ease-in-out infinite alternate;
+      transform-origin: 120px 240px;
+    }
+    .bear-arm-wave {
+      animation: armWave 2.8s ease-in-out infinite alternate;
+      transform-origin: 90px 210px;
+    }
+    @keyframes floatBalloons {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-8px) rotate(1.5deg); }
+    }
+    @keyframes swayB1 {
+      0% { transform: rotate(-2deg); }
+      100% { transform: rotate(3deg); }
+    }
+    @keyframes swayB2 {
+      0% { transform: translateY(0px) scale(1); }
+      100% { transform: translateY(-4px) scale(1.02); }
+    }
+    @keyframes swayB3 {
+      0% { transform: rotate(2deg); }
+      100% { transform: rotate(-3deg); }
+    }
+    @keyframes bearBreathing {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.015) translateY(-1px); }
+    }
+    @keyframes armWave {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(-3deg); }
+    }
+  </style>
+
+  <!-- ================= BALLOONS & STRINGS ================= -->
+  <g class="balloon-cluster">
+    <!-- Strings tying down to the Bear's Paw -->
+    <path d="M 80 80 Q 95 130 112 188" fill="none" stroke="#B8A892" stroke-width="1.6" stroke-dasharray="3,1"/>
+    <path d="M 120 60 Q 118 120 114 188" fill="none" stroke="#B8A892" stroke-width="1.6"/>
+    <path d="M 160 85 Q 140 135 116 188" fill="none" stroke="#B8A892" stroke-width="1.6" stroke-dasharray="3,1"/>
+
+    <!-- Balloon 1 (Sage Green - Left) -->
+    <g class="balloon-1" filter="url(#softShadow)">
+      <!-- Balloon Body -->
+      <path d="M 80 20 C 50 20 45 60 65 80 C 73 88 78 92 80 94 C 82 92 87 88 95 80 C 115 60 110 20 80 20 Z" fill="url(#balloonSage)"/>
+      <!-- Knot -->
+      <polygon points="77,94 83,94 80,98" fill="#6F8868"/>
+      <!-- Highlight -->
+      <ellipse cx="68" cy="40" rx="8" ry="16" transform="rotate(-25 68 40)" fill="#FFFFFF" opacity="0.35"/>
+    </g>
+
+    <!-- Balloon 2 (Warm Gold / Honey - Center Back) -->
+    <g class="balloon-2" filter="url(#softShadow)">
+      <path d="M 120 5 C 90 5 85 45 105 65 C 113 73 118 77 120 79 C 122 77 127 73 135 65 C 155 45 150 5 120 5 Z" fill="url(#balloonGold)"/>
+      <polygon points="117,79 123,79 120,83" fill="#BF984B"/>
+      <ellipse cx="108" cy="25" rx="8" ry="16" transform="rotate(-20 108 25)" fill="#FFFFFF" opacity="0.4"/>
+    </g>
+
+    <!-- Balloon 3 (Soft Blush Peach - Right) -->
+    <g class="balloon-3" filter="url(#softShadow)">
+      <path d="M 160 25 C 130 25 125 65 145 85 C 153 93 158 97 160 99 C 162 97 167 93 175 85 C 195 65 190 25 160 25 Z" fill="url(#balloonPeach)"/>
+      <polygon points="157,99 163,99 160,103" fill="#C9866C"/>
+      <ellipse cx="148" cy="45" rx="7" ry="14" transform="rotate(-25 148 45)" fill="#FFFFFF" opacity="0.35"/>
+    </g>
+
+    <!-- Tiny balloon ribbon bow at knot gather -->
+    <path d="M 114 188 C 108 184 105 180 110 178 C 114 176 116 184 114 188 Z M 114 188 C 120 184 123 180 118 178 C 114 176 112 184 114 188 Z" fill="#D7B48C"/>
+  </g>
+
+
+  <!-- ================= TEDDY BEAR ================= -->
+  <g class="bear-body-group" filter="url(#softShadow)">
+    
+    <!-- Teddy Feet / Paws -->
+    <ellipse cx="100" cy="295" rx="16" ry="11" fill="url(#bearFurGrad)"/>
+    <ellipse cx="100" cy="295" rx="9" ry="6" fill="#F4DEC9"/>
+    
+    <ellipse cx="140" cy="295" rx="16" ry="11" fill="url(#bearFurGrad)"/>
+    <ellipse cx="140" cy="295" rx="9" ry="6" fill="#F4DEC9"/>
+
+    <!-- Teddy Body -->
+    <ellipse cx="120" cy="245" rx="34" ry="42" fill="url(#bearFurGrad)"/>
+    <!-- Teddy Belly Patch -->
+    <ellipse cx="120" cy="250" rx="20" ry="26" fill="url(#snoutGrad)"/>
+
+    <!-- Left Arm Resting -->
+    <ellipse cx="88" cy="245" rx="11" ry="18" transform="rotate(15 88 245)" fill="url(#bearFurGrad)"/>
+
+    <!-- Right Arm Raised Holding Balloons -->
+    <g class="bear-arm-wave">
+      <path d="M 145 235 Q 138 200 116 188 Q 128 194 148 215 Z" fill="url(#bearFurGrad)"/>
+      <!-- Paw holding strings -->
+      <circle cx="114" cy="188" r="9" fill="url(#bearFurGrad)"/>
+      <circle cx="114" cy="188" r="5" fill="#F4DEC9"/>
+    </g>
+
+    <!-- Ears -->
+    <g>
+      <!-- Left Ear -->
+      <circle cx="95" cy="155" r="15" fill="url(#bearFurGrad)"/>
+      <circle cx="95" cy="155" r="8" fill="#EBD2BA"/>
+      <!-- Right Ear -->
+      <circle cx="145" cy="155" r="15" fill="url(#bearFurGrad)"/>
+      <circle cx="145" cy="155" r="8" fill="#EBD2BA"/>
+    </g>
+
+    <!-- Head -->
+    <ellipse cx="120" cy="180" rx="36" ry="32" fill="url(#bearFurGrad)"/>
+
+    <!-- Snout & Nose -->
+    <ellipse cx="120" cy="188" rx="16" ry="13" fill="url(#snoutGrad)"/>
+    <ellipse cx="120" cy="182" rx="5" ry="3.5" fill="#423323"/>
+    <path d="M 120 185.5 L 120 191" stroke="#423323" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M 115 191 Q 120 196 125 191" fill="none" stroke="#423323" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Cheerful Eyes -->
+    <circle cx="106" cy="175" r="3.5" fill="#2E241A"/>
+    <circle cx="108" cy="173.5" r="1.2" fill="#FFFFFF"/>
+    
+    <circle cx="134" cy="175" r="3.5" fill="#2E241A"/>
+    <circle cx="136" cy="173.5" r="1.2" fill="#FFFFFF"/>
+
+    <!-- Rosy Cheeks -->
+    <ellipse cx="98" cy="184" rx="5.5" ry="3" fill="#EFA094" opacity="0.45"/>
+    <ellipse cx="142" cy="184" rx="5.5" ry="3" fill="#EFA094" opacity="0.45"/>
+
+    <!-- Sage Green Bowtie -->
+    <g transform="translate(120, 212)">
+      <polygon points="0,0 -14,-7 -14,7" fill="#7E9178"/>
+      <polygon points="0,0 14,-7 14,7" fill="#7E9178"/>
+      <circle cx="0" cy="0" r="3.5" fill="#586953"/>
+    </g>
+
+  </g>
+
+  <!-- Sparkles around the bear -->
+  <text x="35" y="110" font-size="14" fill="#D4AF37" opacity="0.7">✦</text>
+  <text x="195" y="130" font-size="12" fill="#D4AF37" opacity="0.6">★</text>
+  <text x="40" y="230" font-size="10" fill="#D4AF37" opacity="0.5">★</text>
+  <text x="190" y="250" font-size="14" fill="#D4AF37" opacity="0.7">✦</text>
+</svg>
+

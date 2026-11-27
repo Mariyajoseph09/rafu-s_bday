@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 280" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bunnyWhite2" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F5F3EF"/>
+      <stop offset="100%" stop-color="#E5E0D5"/>
+    </radialGradient>
+    <radialGradient id="balloonMint" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#E2F0EA"/>
+      <stop offset="60%" stop-color="#A5CEBE"/>
+      <stop offset="100%" stop-color="#76A391"/>
+    </radialGradient>
+    <filter id="bunnyBalShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#4E3B27" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <style>
+    .bunny-balloon-anim {
+      animation: floatBunnyBal 4s ease-in-out infinite alternate;
+      transform-origin: 110px 170px;
+    }
+    .mint-balloon {
+      animation: swayBalMint 3s ease-in-out infinite alternate;
+      transform-origin: 140px 60px;
+    }
+    @keyframes floatBunnyBal {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-7px); }
+    }
+    @keyframes swayBalMint {
+      0% { transform: rotate(-3deg); }
+      100% { transform: rotate(4deg); }
+    }
+  </style>
+
+  <!-- ================= FLOATING MINT BALLOON ================= -->
+  <g class="mint-balloon">
+    <!-- String down to bunny paw -->
+    <path d="M 140 70 Q 148 115 136 172" fill="none" stroke="#B8A892" stroke-width="1.6"/>
+    <!-- Balloon Body -->
+    <path d="M 140 10 C 112 10 108 45 125 65 C 132 73 137 77 140 79 C 143 77 148 73 155 65 C 172 45 168 10 140 10 Z" fill="url(#balloonMint)"/>
+    <polygon points="137,79 143,79 140,83" fill="#76A391"/>
+    <!-- Highlight -->
+    <ellipse cx="130" cy="28" rx="6" ry="14" transform="rotate(-25 130 28)" fill="#FFFFFF" opacity="0.4"/>
+  </g>
+
+  <!-- ================= BUNNY STANDING ================= -->
+  <g class="bunny-balloon-anim" filter="url(#bunnyBalShadow)">
+    <!-- Ears -->
+    <ellipse cx="94" cy="95" rx="8" ry="24" transform="rotate(-15 94 95)" fill="url(#bunnyWhite2)"/>
+    <ellipse cx="94" cy="95" rx="4.5" ry="16" transform="rotate(-15 94 95)" fill="#FDE8E4"/>
+    <ellipse cx="126" cy="95" rx="8" ry="24" transform="rotate(10 126 95)" fill="url(#bunnyWhite2)"/>
+    <ellipse cx="126" cy="95" rx="4.5" ry="16" transform="rotate(10 126 95)" fill="#FDE8E4"/>
+
+    <!-- Paws / Feet -->
+    <ellipse cx="96" cy="245" rx="14" ry="9" fill="url(#bunnyWhite2)"/>
+    <ellipse cx="124" cy="245" rx="14" ry="9" fill="url(#bunnyWhite2)"/>
+
+    <!-- Body -->
+    <ellipse cx="110" cy="195" rx="30" ry="38" fill="url(#bunnyWhite2)"/>
+    <!-- Soft blush belly -->
+    <ellipse cx="110" cy="198" rx="18" ry="24" fill="#FFFDF8"/>
+
+    <!-- Left Paw Resting -->
+    <ellipse cx="86" cy="185" rx="8" ry="14" transform="rotate(15 86 185)" fill="url(#bunnyWhite2)"/>
+
+    <!-- Right Paw Raised Holding Balloon String -->
+    <path d="M 125 185 Q 132 175 136 172" stroke="url(#bunnyWhite2)" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="136" cy="172" r="7" fill="url(#bunnyWhite2)"/>
+
+    <!-- Head -->
+    <ellipse cx="110" cy="142" rx="32" ry="27" fill="url(#bunnyWhite2)"/>
+
+    <!-- Nose & Mouth -->
+    <ellipse cx="110" cy="148" rx="12" ry="8" fill="#FFFFFF"/>
+    <polygon points="110,146 107,143 113,143" fill="#E89B9B"/>
+    <path d="M 110 146 L 110 150" stroke="#423323" stroke-width="1.3"/>
+    <path d="M 107 150 Q 110 153 113 150" fill="none" stroke="#423323" stroke-width="1.3"/>
+
+    <!-- Eyes -->
+    <circle cx="98" cy="138" r="3.2" fill="#2E241A"/>
+    <circle cx="99.2" cy="136.8" r="1.1" fill="#FFFFFF"/>
+    <circle cx="122" cy="138" r="3.2" fill="#2E241A"/>
+    <circle cx="123.2" cy="136.8" r="1.1" fill="#FFFFFF"/>
+
+    <!-- Blush -->
+    <ellipse cx="91" cy="146" rx="5" ry="3" fill="#EFA094" opacity="0.6"/>
+    <ellipse cx="129" cy="146" rx="5" ry="3" fill="#EFA094" opacity="0.6"/>
+
+    <!-- Pastel Pink Bowtie -->
+    <g transform="translate(110, 164)">
+      <polygon points="0,0 -10,-5 -10,5" fill="#EBB39C"/>
+      <polygon points="0,0 10,-5 10,5" fill="#EBB39C"/>
+      <circle cx="0" cy="0" r="2.5" fill="#D49A80"/>
+    </g>
+  </g>
+</svg>

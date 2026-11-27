@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 250" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bunnyWhite" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F7F4EE"/>
+      <stop offset="100%" stop-color="#E7E1D6"/>
+    </radialGradient>
+    <radialGradient id="bunnyPink" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDE8E4"/>
+      <stop offset="100%" stop-color="#F4BFB7"/>
+    </radialGradient>
+    <radialGradient id="cloudBunny" cx="50%" cy="28%" r="72%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="62%" stop-color="#F6F9FD"/>
+      <stop offset="100%" stop-color="#DCE8F4"/>
+    </radialGradient>
+    <filter id="bunnyShadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#4E3B27" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <style>
+    .bunny-float-cloud {
+      animation: bunnyFloat 3.6s ease-in-out infinite alternate;
+      transform-origin: 120px 150px;
+    }
+    .bunny-ear-left {
+      animation: earWiggleL 3.2s ease-in-out infinite alternate;
+      transform-origin: 103px 72px;
+    }
+    .bunny-ear-right {
+      animation: earWiggleR 3.2s ease-in-out infinite alternate;
+      transform-origin: 137px 72px;
+    }
+    .bunny-eye-blink {
+      animation: bunnyBlink 4.6s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .bunny-sparkle {
+      animation: bunnySparkleTwinkle 2.4s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .bunny-sparkle-2 {
+      animation: bunnySparkleTwinkle 2.8s ease-in-out infinite 0.9s;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    @keyframes bunnyFloat {
+      0% { transform: translateY(0) rotate(-1deg); }
+      100% { transform: translateY(-9px) rotate(1.4deg); }
+    }
+    @keyframes earWiggleL {
+      0%, 78% { transform: rotate(0deg); }
+      90% { transform: rotate(-4.5deg); }
+      100% { transform: rotate(1.5deg); }
+    }
+    @keyframes earWiggleR {
+      0%, 78% { transform: rotate(0deg); }
+      90% { transform: rotate(4.5deg); }
+      100% { transform: rotate(-1.5deg); }
+    }
+    @keyframes bunnyBlink {
+      0%, 44%, 48%, 92%, 96%, 100% { transform: scaleY(1); }
+      46%, 94% { transform: scaleY(0.12); }
+    }
+    @keyframes bunnySparkleTwinkle {
+      0%, 100% { opacity: 0.35; transform: scale(0.75); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bunny-float-cloud, .bunny-ear-left, .bunny-ear-right, .bunny-eye-blink, .bunny-sparkle, .bunny-sparkle-2 {
+        animation: none !important;
+      }
+    }
+  </style>
+
+  <!-- Floating Sparkles around Bunny -->
+  <text x="46" y="74" font-size="13" fill="#D4AF37" class="bunny-sparkle">✦</text>
+  <text x="182" y="64" font-size="12" fill="#E89B9B" class="bunny-sparkle-2">✦</text>
+  <text x="192" y="138" font-size="11" fill="#D4AF37" class="bunny-sparkle">★</text>
+  <text x="36" y="136" font-size="10" fill="#A9BAA0" class="bunny-sparkle-2">✦</text>
+
+  <g class="bunny-float-cloud" filter="url(#bunnyShadow)">
+    <!-- Ears -->
+    <g class="bunny-ear-left">
+      <ellipse cx="98" cy="46" rx="9.5" ry="27" transform="rotate(-12 98 46)" fill="url(#bunnyWhite)"/>
+      <ellipse cx="98" cy="46" rx="5.2" ry="18.5" transform="rotate(-12 98 46)" fill="url(#bunnyPink)"/>
+    </g>
+    <g class="bunny-ear-right">
+      <ellipse cx="142" cy="46" rx="9.5" ry="27" transform="rotate(12 142 46)" fill="url(#bunnyWhite)"/>
+      <ellipse cx="142" cy="46" rx="5.2" ry="18.5" transform="rotate(12 142 46)" fill="url(#bunnyPink)"/>
+    </g>
+
+    <!-- Body -->
+    <ellipse cx="120" cy="140" rx="34" ry="38" fill="url(#bunnyWhite)"/>
+    <!-- Tail (Fluffy cotton puff) -->
+    <circle cx="82" cy="155" r="11.5" fill="#FFFFFF"/>
+
+    <!-- Head -->
+    <ellipse cx="120" cy="98" rx="36" ry="30" fill="url(#bunnyWhite)"/>
+
+    <!-- Snout & Tiny Pink Nose -->
+    <ellipse cx="120" cy="104" rx="14" ry="10" fill="#FFFFFF"/>
+    <polygon points="120,103 116,99 124,99" fill="#E89B9B"/>
+    <path d="M 120 103 L 120 107" stroke="#423323" stroke-width="1.4"/>
+    <path d="M 116 107 Q 120 111 124 107" fill="none" stroke="#423323" stroke-width="1.4"/>
+
+    <!-- Whiskers -->
+    <line x1="94" y1="102" x2="80" y2="100" stroke="#B8A892" stroke-width="1"/>
+    <line x1="94" y1="106" x2="82" y2="108" stroke="#B8A892" stroke-width="1"/>
+    <line x1="146" y1="102" x2="160" y2="100" stroke="#B8A892" stroke-width="1"/>
+    <line x1="146" y1="106" x2="158" y2="108" stroke="#B8A892" stroke-width="1"/>
+
+    <!-- Cute Blinking Eyes -->
+    <g class="bunny-eye-blink">
+      <circle cx="106" cy="94" r="3.5" fill="#2E241A"/>
+      <circle cx="107.2" cy="92.8" r="1.15" fill="#FFFFFF"/>
+    </g>
+    <g class="bunny-eye-blink">
+      <circle cx="134" cy="94" r="3.5" fill="#2E241A"/>
+      <circle cx="135.2" cy="92.8" r="1.15" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Blush -->
+    <ellipse cx="98" cy="103" rx="5.5" ry="3.2" fill="#EFA094" opacity="0.62"/>
+    <ellipse cx="142" cy="103" rx="5.5" ry="3.2" fill="#EFA094" opacity="0.62"/>
+
+    <!-- Front Paws Holding a Little Gold Star -->
+    <circle cx="112" cy="138" r="7" fill="url(#bunnyWhite)"/>
+    <circle cx="128" cy="138" r="7" fill="url(#bunnyWhite)"/>
+    <text x="114" y="142" font-size="14" fill="#D4AF37">★</text>
+
+    <!-- Extra Fluffy Multi-Puff Cloud Platform -->
+    <g transform="translate(0, 8)">
+      <ellipse cx="64" cy="193" rx="30" ry="20" fill="#F8FBFE"/>
+      <ellipse cx="176" cy="193" rx="30" ry="20" fill="#F8FBFE"/>
+      <path d="M 46 177 C 28 177 20 192 28 209 C 35 220 49 224 70 224 L 170 224 C 196 224 214 212 208 195 C 202 178 182 171 165 178 C 154 156 128 153 110 164 C 95 154 66 159 46 177 Z" fill="url(#cloudBunny)" stroke="#FFFFFF" stroke-width="1.5"/>
+      <ellipse cx="78" cy="182" rx="28" ry="15" fill="#FFFFFF" opacity="0.88"/>
+      <ellipse cx="122" cy="176" rx="32" ry="17" fill="#FFFFFF" opacity="0.9"/>
+      <ellipse cx="164" cy="186" rx="26" ry="14" fill="#FFFFFF" opacity="0.85"/>
+    </g>
+  </g>
+</svg>
+

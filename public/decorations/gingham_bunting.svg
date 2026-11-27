@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 92" width="600" height="92">
+  <defs>
+    <!-- Brown & Cream Gingham Pattern -->
+    <pattern id="ginghamBrown" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#FBF6EE"/>
+      <rect width="6" height="12" fill="#B59573" fill-opacity="0.48"/>
+      <rect width="12" height="6" fill="#B59573" fill-opacity="0.48"/>
+      <rect width="6" height="6" fill="#94724E" fill-opacity="0.35"/>
+    </pattern>
+
+    <!-- Soft Beige & Ivory Gingham Pattern -->
+    <pattern id="ginghamBeige" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#FCF8F2"/>
+      <rect width="6" height="12" fill="#D5BEA4" fill-opacity="0.5"/>
+      <rect width="12" height="6" fill="#D5BEA4" fill-opacity="0.5"/>
+      <rect width="6" height="6" fill="#B89B7C" fill-opacity="0.3"/>
+    </pattern>
+
+    <filter id="buntingSoftShadow" x="-5%" y="-5%" width="110%" height="125%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="2.2" flood-color="#6F563D" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <style>
+    .flag-swing-a {
+      animation: flagSwayA 4.6s ease-in-out infinite alternate;
+      transform-origin: center top;
+      transform-box: fill-box;
+    }
+    .flag-swing-b {
+      animation: flagSwayB 5.2s ease-in-out infinite alternate;
+      transform-origin: center top;
+      transform-box: fill-box;
+    }
+    @keyframes flagSwayA {
+      0% { transform: rotate(-1.6deg); }
+      100% { transform: rotate(1.6deg); }
+    }
+    @keyframes flagSwayB {
+      0% { transform: rotate(1.5deg); }
+      100% { transform: rotate(-1.5deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .flag-swing-a, .flag-swing-b { animation: none !important; }
+    }
+  </style>
+
+  <!-- Delicate Curved Twine String -->
+  <path d="M 6 12 Q 300 44 594 12" stroke="#AE9070" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Swallowtail Gingham Pennant Flags -->
+  <g filter="url(#buntingSoftShadow)">
+    <g class="flag-swing-a">
+      <polygon points="34,15 66,18 66,56 50,45 34,53" fill="url(#ginghamBeige)" stroke="#CBB397" stroke-width="0.9"/>
+    </g>
+    <g class="flag-swing-b">
+      <polygon points="88,20 120,23 120,62 104,51 88,59" fill="url(#ginghamBrown)" stroke="#A78663" stroke-width="0.9"/>
+    </g>
+    <g class="flag-swing-a">
+      <polygon points="142,24 174,26 174,66 158,55 142,64" fill="url(#ginghamBeige)" stroke="#CBB397" stroke-width="0.9"/>
+    </g>
+    <g class="flag-swing-b">
+      <polygon points="196,27 228,29 228,69 212,58 196,67" fill="url(#ginghamBrown)" stroke="#A78663" stroke-width="0.9"/>
+    </g>
+    <g class="flag-swing-a">
+      <polygon points="250,29 282,30 282,70 266,59 250,69" fill="url(#ginghamBeige)" stroke="#CBB397" stroke-width="0.9"/>
+    </g>
+    <g class="flag-swing-b">
+      <polygon points="318,30 350,29 350,69 334,59 318,70" fill="url(#ginghamBrown)" stroke="#A78663" stroke-width="0.9"/>
+    </g>
+    <g class="flag-swing-a">
+      <polygon points="372,29 404,27 404,67 388,58 372,69" fill="url(#ginghamBeige)" stroke="#CBB397" stroke-width="0.9"/>
+    </g>
+    <g class="flag-swing-b">
+      <polygon points="426,26 458,24 458,64 442,55 426,66" fill="url(#ginghamBrown)" stroke="#A78663" stroke-width="0.9"/>
+    </g>
+    <g class="flag-swing-a">
+      <polygon points="480,23 512,20 512,59 496,51 480,62" fill="url(#ginghamBeige)" stroke="#CBB397" stroke-width="0.9"/>
+    </g>
+    <g class="flag-swing-b">
+      <polygon points="534,18 566,15 566,53 550,45 534,56" fill="url(#ginghamBrown)" stroke="#A78663" stroke-width="0.9"/>
+    </g>
+  </g>
+</svg>
+

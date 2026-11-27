@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="100" height="80">
+  <defs>
+    <linearGradient id="bflyWingGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD5CE"/>
+      <stop offset="50%" stop-color="#F8EDEB"/>
+      <stop offset="100%" stop-color="#E8C5B0"/>
+    </linearGradient>
+    <linearGradient id="bflyWingGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C5D7C0"/>
+      <stop offset="100%" stop-color="#A5BEA0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes flutterLeft {
+      0%, 100% { transform: scaleX(1); }
+      50% { transform: scaleX(0.25); }
+    }
+    @keyframes flutterRight {
+      0%, 100% { transform: scaleX(1); }
+      50% { transform: scaleX(0.25); }
+    }
+    .wing-left-group {
+      transform-origin: 50px 40px;
+      animation: flutterLeft 0.35s ease-in-out infinite alternate;
+    }
+    .wing-right-group {
+      transform-origin: 50px 40px;
+      animation: flutterRight 0.35s ease-in-out infinite alternate;
+    }
+  </style>
+
+  <!-- Left Wings -->
+  <g class="wing-left-group">
+    <!-- Forewing -->
+    <path d="M 50 38 C 45 18, 12 12, 10 32 C 8 46, 32 48, 50 42 Z" fill="url(#bflyWingGrad1)" stroke="#DFC2B5" stroke-width="1.5"/>
+    <ellipse cx="25" cy="30" rx="6" ry="4" fill="#FFF" opacity="0.6"/>
+    <!-- Hindwing -->
+    <path d="M 50 42 C 42 46, 18 50, 22 66 C 26 76, 46 64, 50 48 Z" fill="url(#bflyWingGrad2)" stroke="#97AF92" stroke-width="1.5"/>
+    <circle cx="30" cy="58" r="3" fill="#FFF" opacity="0.6"/>
+  </g>
+
+  <!-- Right Wings -->
+  <g class="wing-right-group">
+    <!-- Forewing -->
+    <path d="M 50 38 C 55 18, 88 12, 90 32 C 92 46, 68 48, 50 42 Z" fill="url(#bflyWingGrad1)" stroke="#DFC2B5" stroke-width="1.5"/>
+    <ellipse cx="75" cy="30" rx="6" ry="4" fill="#FFF" opacity="0.6"/>
+    <!-- Hindwing -->
+    <path d="M 50 42 C 58 46, 82 50, 78 66 C 74 76, 54 64, 50 48 Z" fill="url(#bflyWingGrad2)" stroke="#97AF92" stroke-width="1.5"/>
+    <circle cx="70" cy="58" r="3" fill="#FFF" opacity="0.6"/>
+  </g>
+
+  <!-- Butterfly Body -->
+  <g>
+    <!-- Antennae -->
+    <path d="M 49 28 Q 45 16 38 18" stroke="#756254" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <circle cx="38" cy="18" r="1.5" fill="#C5A059"/>
+    <path d="M 51 28 Q 55 16 62 18" stroke="#756254" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <circle cx="62" cy="18" r="1.5" fill="#C5A059"/>
+    <!-- Thorax & Abdomen -->
+    <ellipse cx="50" cy="44" rx="3.5" ry="16" fill="#756254"/>
+    <circle cx="50" cy="28" r="4" fill="#5E4C40"/>
+  </g>
+</svg>

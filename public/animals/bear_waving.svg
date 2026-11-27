@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 250" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bearFurWave" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#F2DEC9"/>
+      <stop offset="65%" stop-color="#DBB892"/>
+      <stop offset="100%" stop-color="#BD956A"/>
+    </radialGradient>
+    <radialGradient id="snoutGrad4" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FFF8EE"/>
+      <stop offset="100%" stop-color="#EEDAC4"/>
+    </radialGradient>
+    <filter id="waveShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#4E3B27" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <style>
+    .arm-left-wave {
+      animation: waveLeftArm 1.6s ease-in-out infinite alternate;
+      transform-origin: 75px 145px;
+    }
+    .arm-right-wave {
+      animation: waveRightArm 1.8s ease-in-out infinite alternate 0.3s;
+      transform-origin: 165px 145px;
+    }
+    .bear-head-tilt {
+      animation: headTiltWave 3.2s ease-in-out infinite alternate;
+      transform-origin: 120px 110px;
+    }
+    @keyframes waveLeftArm {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(-25deg); }
+    }
+    @keyframes waveRightArm {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(25deg); }
+    }
+    @keyframes headTiltWave {
+      0% { transform: rotate(-3deg); }
+      100% { transform: rotate(3deg); }
+    }
+  </style>
+
+  <g filter="url(#waveShadow)">
+    <!-- Ears -->
+    <circle cx="85" cy="55" r="15" fill="url(#bearFurWave)"/>
+    <circle cx="85" cy="55" r="8" fill="#F4DEC9"/>
+    <circle cx="155" cy="55" r="15" fill="url(#bearFurWave)"/>
+    <circle cx="155" cy="55" r="8" fill="#F4DEC9"/>
+
+    <!-- Feet -->
+    <ellipse cx="85" cy="225" rx="18" ry="12" fill="url(#bearFurWave)"/>
+    <ellipse cx="85" cy="225" rx="10" ry="7" fill="#F4DEC9"/>
+    <ellipse cx="155" cy="225" rx="18" ry="12" fill="url(#bearFurWave)"/>
+    <ellipse cx="155" cy="225" rx="10" ry="7" fill="#F4DEC9"/>
+
+    <!-- Body -->
+    <ellipse cx="120" cy="165" rx="42" ry="46" fill="url(#bearFurWave)"/>
+    <!-- Belly patch -->
+    <ellipse cx="120" cy="170" rx="24" ry="28" fill="url(#snoutGrad4)"/>
+
+    <!-- Waving Left Arm -->
+    <g class="arm-left-wave">
+      <path d="M 85 150 Q 55 125 45 95 Q 60 90 75 115 Q 85 135 85 150 Z" fill="url(#bearFurWave)"/>
+      <circle cx="50" cy="95" r="11" fill="url(#bearFurWave)"/>
+      <circle cx="50" cy="95" r="6" fill="#F4DEC9"/>
+    </g>
+
+    <!-- Waving Right Arm -->
+    <g class="arm-right-wave">
+      <path d="M 155 150 Q 185 125 195 95 Q 180 90 165 115 Q 155 135 155 150 Z" fill="url(#bearFurWave)"/>
+      <circle cx="190" cy="95" r="11" fill="url(#bearFurWave)"/>
+      <circle cx="190" cy="95" r="6" fill="#F4DEC9"/>
+    </g>
+
+    <!-- Head Group with Tilt -->
+    <g class="bear-head-tilt">
+      <ellipse cx="120" cy="95" rx="42" ry="36" fill="url(#bearFurWave)"/>
+
+      <!-- Snout -->
+      <ellipse cx="120" cy="104" rx="17" ry="13" fill="url(#snoutGrad4)"/>
+      <ellipse cx="120" cy="99" rx="5" ry="3.5" fill="#423323"/>
+      <path d="M 120 102.5 L 120 107" stroke="#423323" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M 115 107 Q 120 113 125 107" fill="none" stroke="#423323" stroke-width="1.8" stroke-linecap="round"/>
+
+      <!-- Big Happy Eyes -->
+      <circle cx="104" cy="90" r="3.8" fill="#2E241A"/>
+      <circle cx="105.5" cy="88.5" r="1.3" fill="#FFFFFF"/>
+      <circle cx="136" cy="90" r="3.8" fill="#2E241A"/>
+      <circle cx="137.5" cy="88.5" r="1.3" fill="#FFFFFF"/>
+
+      <!-- Rosy Cheeks -->
+      <ellipse cx="94" cy="102" rx="6" ry="3.5" fill="#EFA094" opacity="0.55"/>
+      <ellipse cx="146" cy="102" rx="6" ry="3.5" fill="#EFA094" opacity="0.55"/>
+
+      <!-- Sage Bowtie -->
+      <g transform="translate(120, 126)">
+        <polygon points="0,0 -14,-7 -14,7" fill="#8F9E89"/>
+        <polygon points="0,0 14,-7 14,7" fill="#8F9E89"/>
+        <circle cx="0" cy="0" r="3.5" fill="#6A7A64"/>
+      </g>
+    </g>
+  </g>
+</svg>

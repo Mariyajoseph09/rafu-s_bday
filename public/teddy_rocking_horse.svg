@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="rockerWood" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E2CCA8"/>
+      <stop offset="100%" stop-color="#BC9E76"/>
+    </radialGradient>
+    <radialGradient id="bearFur" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#E8CEAC"/>
+      <stop offset="70%" stop-color="#D4B088"/>
+      <stop offset="100%" stop-color="#B78F65"/>
+    </radialGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#554433" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Rocking Curved Rails -->
+  <path d="M 25 160 Q 100 185 175 160" fill="none" stroke="url(#rockerWood)" stroke-width="8" stroke-linecap="round" filter="url(#softShadow)"/>
+  
+  <!-- Wooden Rocker Legs -->
+  <line x1="65" y1="125" x2="50" y2="166" stroke="#C4A882" stroke-width="6" stroke-linecap="round"/>
+  <line x1="135" y1="125" x2="150" y2="166" stroke="#C4A882" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Horse Body -->
+  <path d="M 60 125 C 60 110, 80 115, 100 115 C 120 115, 140 110, 145 125 C 145 135, 130 140, 100 140 C 70 140, 60 135, 60 125 Z" fill="#EADBC6" stroke="#CBB494" stroke-width="2"/>
+  
+  <!-- Horse Neck & Head -->
+  <path d="M 130 120 Q 155 95 145 75 Q 135 70 125 80 Q 120 95 120 118 Z" fill="#EADBC6" stroke="#CBB494" stroke-width="2"/>
+  <!-- Horse Mane -->
+  <path d="M 125 78 Q 118 85 120 98" fill="none" stroke="#A89274" stroke-width="3" stroke-linecap="round"/>
+  <!-- Horse Ear -->
+  <polygon points="135,72 142,62 145,74" fill="#D8BE9E"/>
+  <!-- Handle bar -->
+  <circle cx="132" cy="88" r="4" fill="#8F9E89"/>
+
+  <!-- Cute Baby Teddy Bear Riding the Horse -->
+  <!-- Tail -->
+  <circle cx="68" cy="112" r="7" fill="url(#bearFur)"/>
+  <!-- Body -->
+  <ellipse cx="92" cy="105" rx="16" ry="18" fill="url(#bearFur)" filter="url(#softShadow)"/>
+  <!-- Belly patch -->
+  <ellipse cx="94" cy="107" rx="9" ry="11" fill="#F5E6D3"/>
+  <!-- Bear Legs -->
+  <ellipse cx="92" cy="120" rx="9" ry="6" fill="#C49B72"/>
+
+  <!-- Bear Head -->
+  <circle cx="98" cy="74" r="18" fill="url(#bearFur)" filter="url(#softShadow)"/>
+  <!-- Left Ear -->
+  <circle cx="84" cy="62" r="7" fill="url(#bearFur)"/>
+  <circle cx="84" cy="62" r="4" fill="#F4DEC9"/>
+  <!-- Right Ear -->
+  <circle cx="112" cy="62" r="7" fill="url(#bearFur)"/>
+  <circle cx="112" cy="62" r="4" fill="#F4DEC9"/>
+
+  <!-- Snout & Smile -->
+  <ellipse cx="102" cy="78" rx="8" ry="6" fill="#F5E6D3"/>
+  <ellipse cx="103" cy="75" rx="2.8" ry="2" fill="#4A3B2C"/>
+  <path d="M 100 78 Q 103 82 106 78" fill="none" stroke="#4A3B2C" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <circle cx="94" cy="72" r="2" fill="#3D3023"/>
+  <circle cx="95" cy="71" r="0.6" fill="#FFFFFF"/>
+  <circle cx="106" cy="72" r="2" fill="#3D3023"/>
+  <circle cx="107" cy="71" r="0.6" fill="#FFFFFF"/>
+  <!-- Blush -->
+  <ellipse cx="91" cy="77" rx="3" ry="1.5" fill="#E89B9B" opacity="0.4"/>
+  <ellipse cx="110" cy="77" rx="3" ry="1.5" fill="#E89B9B" opacity="0.4"/>
+
+  <!-- Tiny Sage Green Bowtie on Bear -->
+  <path d="M 100 89 L 94 86 L 94 92 Z M 100 89 L 106 86 L 106 92 Z" fill="#7E9178"/>
+  <circle cx="100" cy="89" r="1.5" fill="#586953"/>
+
+  <!-- Bear Arm holding horse neck -->
+  <path d="M 96 98 Q 112 96 122 92" fill="none" stroke="url(#bearFur)" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Stars decor -->
+  <text x="35" y="60" font-size="12" fill="#D4AF37" opacity="0.6">✦</text>
+  <text x="160" y="90" font-size="10" fill="#D4AF37" opacity="0.5">★</text>
+</svg>
+

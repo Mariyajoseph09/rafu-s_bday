@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 130" width="240" height="130">
+  <defs>
+    <radialGradient id="wcCloudWash" cx="48%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.98"/>
+      <stop offset="58%" stop-color="#F7F1E7" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#E7D8C5" stop-opacity="0.65"/>
+    </radialGradient>
+    <radialGradient id="wcCloudHighlight" cx="45%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FAF5EC" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="wcSoftBlur" x="-15%" y="-15%" width="130%" height="135%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#wcSoftBlur)">
+    <!-- Soft outer watercolor wash -->
+    <path d="M 38 100 C 16 100 10 80 24 66 C 28 45 52 38 72 48 C 86 24 128 22 146 44 C 168 32 198 46 198 70 C 216 74 222 98 198 102 Z" fill="url(#wcCloudWash)"/>
+    <!-- Fluffy layered puffs -->
+    <ellipse cx="70" cy="70" rx="38" ry="26" fill="url(#wcCloudHighlight)"/>
+    <ellipse cx="122" cy="58" rx="44" ry="30" fill="url(#wcCloudHighlight)"/>
+    <ellipse cx="168" cy="74" rx="34" ry="22" fill="url(#wcCloudHighlight)"/>
+    <ellipse cx="116" cy="92" rx="76" ry="14" fill="#EFE4D6" opacity="0.45"/>
+  </g>
+</svg>
+

@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 360" width="100%" height="100%">
+  <defs>
+    <!-- Soft 3D Plush Caramel-Beige Fur Gradients -->
+    <radialGradient id="vBearFurMain" cx="42%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#FBF2E6"/>
+      <stop offset="48%" stop-color="#EAD4BA"/>
+      <stop offset="85%" stop-color="#D3B18C"/>
+      <stop offset="100%" stop-color="#BE976F"/>
+    </radialGradient>
+    <radialGradient id="vBearFurWarm" cx="45%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#F5E5D1"/>
+      <stop offset="65%" stop-color="#DEC09E"/>
+      <stop offset="100%" stop-color="#C29C74"/>
+    </radialGradient>
+    <radialGradient id="vBearCream" cx="50%" cy="38%" r="58%">
+      <stop offset="0%" stop-color="#FFFDF9"/>
+      <stop offset="65%" stop-color="#F8ECDD"/>
+      <stop offset="100%" stop-color="#E7D3BC"/>
+    </radialGradient>
+
+    <!-- Ribbon Bow Gradients -->
+    <linearGradient id="vRibbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ECE0CF"/>
+      <stop offset="55%" stop-color="#D5BFA6"/>
+      <stop offset="100%" stop-color="#B89B7C"/>
+    </linearGradient>
+
+    <!-- Watercolor Balloons: Creamy Ivory & Warm Caramel Taupe -->
+    <radialGradient id="vBalloonIvory" cx="35%" cy="30%" r="72%">
+      <stop offset="0%" stop-color="#FFFDF9"/>
+      <stop offset="48%" stop-color="#F5EBDC"/>
+      <stop offset="82%" stop-color="#E2D0B9"/>
+      <stop offset="100%" stop-color="#CCB599"/>
+    </radialGradient>
+    <radialGradient id="vBalloonCaramel" cx="34%" cy="30%" r="72%">
+      <stop offset="0%" stop-color="#EFE0CD"/>
+      <stop offset="48%" stop-color="#D2B696"/>
+      <stop offset="84%" stop-color="#B4916E"/>
+      <stop offset="100%" stop-color="#9B7755"/>
+    </radialGradient>
+
+    <filter id="vBearShadow" x="-18%" y="-15%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#5E462E" flood-opacity="0.14"/>
+    </filter>
+    <filter id="vBalloonShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#6B5136" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <style>
+    .v-bear-float {
+      animation: vBearFloat 4.6s ease-in-out infinite alternate;
+      transform-origin: 150px 260px;
+    }
+    .v-balloon-ivory {
+      animation: vBalloonDriftA 4.2s ease-in-out infinite alternate;
+      transform-origin: 215px 150px;
+    }
+    .v-balloon-caramel {
+      animation: vBalloonDriftB 4.9s ease-in-out infinite alternate;
+      transform-origin: 235px 175px;
+    }
+    .v-bow-sway {
+      animation: vBowSway 4.6s ease-in-out infinite alternate;
+      transform-origin: 145px 222px;
+    }
+    @keyframes vBearFloat {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-7px); }
+    }
+    @keyframes vBalloonDriftA {
+      0% { transform: translateY(0px) rotate(-2deg); }
+      100% { transform: translateY(-8px) rotate(2.5deg); }
+    }
+    @keyframes vBalloonDriftB {
+      0% { transform: translateY(0px) rotate(2deg); }
+      100% { transform: translateY(-6px) rotate(-2.5deg); }
+    }
+    @keyframes vBowSway {
+      0% { transform: rotate(-1.2deg); }
+      100% { transform: rotate(1.2deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .v-bear-float, .v-balloon-ivory, .v-balloon-caramel, .v-bow-sway {
+        animation: none !important;
+      }
+    }
+  </style>
+
+  <!-- Soft Floor Shadow Beneath Standing Plush Bear -->
+  <ellipse cx="145" cy="340" rx="64" ry="9" fill="#9A7E60" opacity="0.18"/>
+
+  <!-- ================= FLOATING BALLOONS & STRINGS ================= -->
+  <g class="v-bear-float">
+    <!-- Delicate Balloon Strings from Raised Paw (200, 210) -->
+    <g class="v-balloon-ivory">
+      <path d="M 201 214 Q 214 166 202 114" fill="none" stroke="#B69B7D" stroke-width="1.5" stroke-linecap="round"/>
+      <g filter="url(#vBalloonShadow)">
+        <ellipse cx="198" cy="70" rx="34" ry="42" transform="rotate(-7 198 70)" fill="url(#vBalloonIvory)"/>
+        <polygon points="200,111 195,116 205,116" fill="#CCB599"/>
+        <!-- Soft painterly specular highlight & subtle watercolor speckling -->
+        <ellipse cx="184" cy="50" rx="9" ry="17" transform="rotate(-24 184 50)" fill="#FFFFFF" opacity="0.58"/>
+        <circle cx="212" cy="82" r="2.2" fill="#C9B295" opacity="0.3"/>
+        <circle cx="188" cy="88" r="1.5" fill="#C9B295" opacity="0.28"/>
+      </g>
+    </g>
+
+    <g class="v-balloon-caramel">
+      <path d="M 203 214 Q 228 180 244 134" fill="none" stroke="#B69B7D" stroke-width="1.5" stroke-linecap="round"/>
+      <g filter="url(#vBalloonShadow)">
+        <ellipse cx="247" cy="96" rx="30" ry="37" transform="rotate(8 247 96)" fill="url(#vBalloonCaramel)"/>
+        <polygon points="244,132 239,137 249,137" fill="#9B7755"/>
+        <ellipse cx="235" cy="78" rx="8" ry="15" transform="rotate(-18 235 78)" fill="#FFFFFF" opacity="0.4"/>
+        <circle cx="258" cy="108" r="2" fill="#8A6848" opacity="0.28"/>
+        <circle cx="238" cy="112" r="1.5" fill="#8A6848" opacity="0.24"/>
+      </g>
+    </g>
+
+    <!-- ================= MAIN PLUSH BEIGE TEDDY BEAR ================= -->
+    <g filter="url(#vBearShadow)">
+      <!-- Left Arm (Resting gently at side) -->
+      <ellipse cx="98" cy="252" rx="16" ry="25" transform="rotate(24 98 252)" fill="url(#vBearFurWarm)"/>
+      <ellipse cx="92" cy="268" rx="9" ry="7" fill="url(#vBearCream)" opacity="0.75"/>
+
+      <!-- Right Arm (Raised holding balloon strings) -->
+      <path d="M 176 232 C 194 228, 208 218, 206 206 C 204 196, 192 198, 184 210 C 178 218, 174 222, 172 228 Z" fill="url(#vBearFurWarm)"/>
+      <circle cx="199" cy="211" r="11" fill="url(#vBearFurMain)"/>
+      <ellipse cx="200" cy="212" rx="6" ry="5" fill="url(#vBearCream)" opacity="0.8"/>
+
+      <!-- Standing Chubby Legs & Plush Feet -->
+      <ellipse cx="122" cy="306" rx="19" ry="26" fill="url(#vBearFurWarm)"/>
+      <ellipse cx="168" cy="306" rx="19" ry="26" fill="url(#vBearFurWarm)"/>
+      <!-- Foot Paws -->
+      <ellipse cx="120" cy="328" rx="20" ry="13.5" fill="url(#vBearFurMain)"/>
+      <ellipse cx="120" cy="329" rx="11.5" ry="7.5" fill="url(#vBearCream)"/>
+      <ellipse cx="170" cy="328" rx="20" ry="13.5" fill="url(#vBearFurMain)"/>
+      <ellipse cx="170" cy="329" rx="11.5" ry="7.5" fill="url(#vBearCream)"/>
+
+      <!-- Torso & Creamy Plush Belly -->
+      <ellipse cx="145" cy="264" rx="44" ry="48" fill="url(#vBearFurMain)"/>
+      <ellipse cx="145" cy="268" rx="27" ry="32" fill="url(#vBearCream)" opacity="0.78"/>
+
+      <!-- Delicate Beige Ribbon Bow Around Neck -->
+      <g class="v-bow-sway">
+        <!-- Neckband -->
+        <path d="M 116 218 Q 145 228 174 218" stroke="#C5AC8F" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- Flowing Ribbon Tails -->
+        <path d="M 143 224 C 134 242, 126 254, 122 264 L 132 260 L 136 266 C 140 252, 143 238, 145 226 Z" fill="url(#vRibbonGrad)" stroke="#B59879" stroke-width="0.8"/>
+        <path d="M 147 224 C 156 242, 164 254, 168 264 L 158 260 L 154 266 C 150 252, 147 238, 145 226 Z" fill="url(#vRibbonGrad)" stroke="#B59879" stroke-width="0.8"/>
+        <!-- Left & Right Bow Loops -->
+        <path d="M 144 223 C 122 206, 108 214, 112 228 C 115 239, 132 234, 144 225 Z" fill="url(#vRibbonGrad)" stroke="#B59879" stroke-width="0.9"/>
+        <path d="M 146 223 C 168 206, 182 214, 178 228 C 175 239, 158 234, 146 225 Z" fill="url(#vRibbonGrad)" stroke="#B59879" stroke-width="0.9"/>
+        <!-- Bow Center Knot -->
+        <ellipse cx="145" cy="224" rx="6.5" ry="6" fill="#D9C4AB" stroke="#B59879" stroke-width="0.9"/>
+      </g>
+
+      <!-- Cute Round Ears -->
+      <circle cx="101" cy="119" r="21" fill="url(#vBearFurMain)"/>
+      <circle cx="101" cy="120" r="11.5" fill="url(#vBearCream)"/>
+      <circle cx="189" cy="119" r="21" fill="url(#vBearFurMain)"/>
+      <circle cx="189" cy="120" r="11.5" fill="url(#vBearCream)"/>
+
+      <!-- Fluffy Plush Head -->
+      <ellipse cx="145" cy="162" rx="58" ry="50" fill="url(#vBearFurMain)"/>
+      <!-- Soft Top Head Highlight -->
+      <ellipse cx="145" cy="134" rx="34" ry="14" fill="#FFF9F0" opacity="0.32"/>
+
+      <!-- Soft Cream Snout -->
+      <ellipse cx="145" cy="176" rx="22" ry="16" fill="url(#vBearCream)"/>
+      <!-- Stitched Cocoa Nose -->
+      <ellipse cx="145" cy="169.5" rx="6.5" ry="4.5" fill="#5D422E"/>
+      <ellipse cx="143" cy="168" rx="2" ry="1.1" fill="#8B6B52" opacity="0.65"/>
+      <!-- Sweet Friendly Smile -->
+      <path d="M 145 174 L 145 180" stroke="#5D422E" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M 138 180.5 Q 145 186.5 152 180.5" fill="none" stroke="#5D422E" stroke-width="1.9" stroke-linecap="round"/>
+
+      <!-- Glossy Friendly Eyes -->
+      <circle cx="121" cy="158" r="4.8" fill="#3B291C"/>
+      <circle cx="122.6" cy="156.3" r="1.7" fill="#FFFFFF"/>
+      <circle cx="120" cy="159.8" r="0.8" fill="#FFFFFF" opacity="0.7"/>
+
+      <circle cx="169" cy="158" r="4.8" fill="#3B291C"/>
+      <circle cx="170.6" cy="156.3" r="1.7" fill="#FFFFFF"/>
+      <circle cx="168" cy="159.8" r="0.8" fill="#FFFFFF" opacity="0.7"/>
+
+      <!-- Soft Warm Peach-Rosy Cheeks -->
+      <ellipse cx="107" cy="172" rx="8.5" ry="4.8" fill="#EFA598" opacity="0.52"/>
+      <ellipse cx="183" cy="172" rx="8.5" ry="4.8" fill="#EFA598" opacity="0.52"/>
+    </g>
+  </g>
+</svg>
+

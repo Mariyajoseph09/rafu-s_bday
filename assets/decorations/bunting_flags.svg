@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 80" width="600" height="80">
+  <defs>
+    <filter id="garlandShadow" x="0" y="0" width="100%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#807060" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Swaying String -->
+  <path d="M 0 15 Q 150 45 300 20 Q 450 45 600 15" stroke="#C4A87C" stroke-width="2" fill="none" stroke-dasharray="2 6"/>
+
+  <g filter="url(#garlandShadow)">
+    <!-- Flags -->
+    <!-- Flag 1 (Olive) -->
+    <polygon points="40,20 75,25 57,68" fill="#8A9A84"/>
+    <circle cx="57" cy="42" r="3" fill="#FFF" opacity="0.6"/>
+
+    <!-- Flag 2 (Peach) -->
+    <polygon points="105,29 140,32 122,74" fill="#EBC7B2"/>
+    <text x="122" y="55" font-size="12" fill="#FFF" text-anchor="middle">★</text>
+
+    <!-- Flag 3 (Baby Blue) -->
+    <polygon points="170,33 205,32 187,76" fill="#B8CCE0"/>
+    <circle cx="187" cy="50" r="3.5" fill="#FFF" opacity="0.6"/>
+
+    <!-- Flag 4 (Cream Gold) -->
+    <polygon points="235,28 270,23 252,69" fill="#F4DEAF"/>
+    <text x="252" y="48" font-size="12" fill="#D4AF37" text-anchor="middle">♥</text>
+
+    <!-- Flag 5 (Blush Pink) -->
+    <polygon points="300,21 335,26 317,70" fill="#F7CCD2"/>
+    <circle cx="317" cy="45" r="3.5" fill="#FFF" opacity="0.6"/>
+
+    <!-- Flag 6 (Sage) -->
+    <polygon points="365,29 400,33 382,75" fill="#9CB298"/>
+    <text x="382" y="54" font-size="12" fill="#FFF" text-anchor="middle">★</text>
+
+    <!-- Flag 7 (Peach) -->
+    <polygon points="430,33 465,30 447,74" fill="#E8C5A5"/>
+    <circle cx="447" cy="50" r="3.5" fill="#FFF" opacity="0.6"/>
+
+    <!-- Flag 8 (Baby Blue) -->
+    <polygon points="495,27 530,22 512,68" fill="#B8CCE0"/>
+    <text x="512" y="47" font-size="12" fill="#FFF" text-anchor="middle">♥</text>
+
+    <!-- Flag 9 (Olive) -->
+    <polygon points="555,18 588,15 571,60" fill="#8A9A84"/>
+  </g>
+</svg>

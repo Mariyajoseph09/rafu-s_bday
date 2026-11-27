@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="100%" height="100%">
+  <defs>
+    <radialGradient id="cloudGrad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="65%" stop-color="#F2F6FA"/>
+      <stop offset="100%" stop-color="#D7E4F0"/>
+    </radialGradient>
+    <radialGradient id="bearFurCloud" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#F2DEC9"/>
+      <stop offset="65%" stop-color="#DBB892"/>
+      <stop offset="100%" stop-color="#BD956A"/>
+    </radialGradient>
+    <radialGradient id="snoutGrad2" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FFF8EE"/>
+      <stop offset="100%" stop-color="#EEDAC4"/>
+    </radialGradient>
+    <filter id="cloudShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#4A5C6D" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <style>
+    .bear-on-cloud {
+      animation: cloudBob 4s ease-in-out infinite alternate;
+      transform-origin: 130px 160px;
+    }
+    .little-star {
+      animation: starTwinkle 2.5s ease-in-out infinite alternate;
+    }
+    @keyframes cloudBob {
+      0% { transform: translateY(0px) rotate(-1deg); }
+      100% { transform: translateY(-10px) rotate(1.5deg); }
+    }
+    @keyframes starTwinkle {
+      0% { opacity: 0.3; transform: scale(0.8); }
+      100% { opacity: 0.95; transform: scale(1.15); }
+    }
+  </style>
+
+  <!-- Twinkling stars around cloud -->
+  <text x="30" y="80" font-size="14" fill="#D4AF37" class="little-star">✦</text>
+  <text x="220" y="70" font-size="12" fill="#D4AF37" class="little-star" style="animation-delay: 1.2s;">★</text>
+  <text x="200" y="140" font-size="10" fill="#D4AF37" class="little-star" style="animation-delay: 0.6s;">✦</text>
+  <text x="45" y="160" font-size="11" fill="#D4AF37" class="little-star" style="animation-delay: 1.8s;">★</text>
+
+  <g class="bear-on-cloud" filter="url(#cloudShadow)">
+    
+    <!-- ================= TEDDY BEAR SITTING ================= -->
+    <!-- Ears -->
+    <circle cx="102" cy="65" r="14" fill="url(#bearFurCloud)"/>
+    <circle cx="102" cy="65" r="7" fill="#F4DEC9"/>
+    <circle cx="158" cy="65" r="14" fill="url(#bearFurCloud)"/>
+    <circle cx="158" cy="65" r="7" fill="#F4DEC9"/>
+
+    <!-- Body -->
+    <ellipse cx="130" cy="135" rx="34" ry="38" fill="url(#bearFurCloud)"/>
+    <ellipse cx="130" cy="140" rx="20" ry="24" fill="url(#snoutGrad2)"/>
+
+    <!-- Dangling Feet -->
+    <ellipse cx="108" cy="180" rx="14" ry="10" fill="url(#bearFurCloud)"/>
+    <ellipse cx="108" cy="180" rx="8" ry="6" fill="#F4DEC9"/>
+    <ellipse cx="152" cy="180" rx="14" ry="10" fill="url(#bearFurCloud)"/>
+    <ellipse cx="152" cy="180" rx="8" ry="6" fill="#F4DEC9"/>
+
+    <!-- Paws on Tummy -->
+    <circle cx="112" cy="136" r="9" fill="url(#bearFurCloud)"/>
+    <circle cx="112" cy="136" r="5" fill="#F4DEC9"/>
+    <circle cx="148" cy="136" r="9" fill="url(#bearFurCloud)"/>
+    <circle cx="148" cy="136" r="5" fill="#F4DEC9"/>
+
+    <!-- Head -->
+    <ellipse cx="130" cy="92" rx="36" ry="30" fill="url(#bearFurCloud)"/>
+
+    <!-- Snout -->
+    <ellipse cx="130" cy="99" rx="15" ry="12" fill="url(#snoutGrad2)"/>
+    <ellipse cx="130" cy="95" rx="4.5" ry="3" fill="#423323"/>
+    <path d="M 130 98 L 130 102" stroke="#423323" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M 125 102 Q 130 107 135 102" fill="none" stroke="#423323" stroke-width="1.6" stroke-linecap="round"/>
+
+    <!-- Cheerful Eyes -->
+    <circle cx="117" cy="88" r="3.2" fill="#2E241A"/>
+    <circle cx="118" cy="86.8" r="1.1" fill="#FFFFFF"/>
+    <circle cx="143" cy="88" r="3.2" fill="#2E241A"/>
+    <circle cx="144" cy="86.8" r="1.1" fill="#FFFFFF"/>
+
+    <!-- Blush -->
+    <ellipse cx="108" cy="97" rx="5" ry="3" fill="#EFA094" opacity="0.5"/>
+    <ellipse cx="152" cy="97" rx="5" ry="3" fill="#EFA094" opacity="0.5"/>
+
+    <!-- Baby Blue Bowtie -->
+    <g transform="translate(130, 118)">
+      <polygon points="0,0 -12,-6 -12,6" fill="#9CBBD4"/>
+      <polygon points="0,0 12,-6 12,6" fill="#9CBBD4"/>
+      <circle cx="0" cy="0" r="3" fill="#6D97B8"/>
+    </g>
+
+
+    <!-- ================= PUFFY FLUFFY CLOUD BASE ================= -->
+    <g>
+      <path d="M 60 185 C 40 185 25 200 35 220 C 40 230 55 235 75 235 L 185 235 C 210 235 230 225 225 205 C 220 185 195 180 180 185 C 170 165 140 160 120 170 C 105 160 75 165 60 185 Z" fill="url(#cloudGrad)"/>
+      <!-- Soft cloud highlights -->
+      <ellipse cx="90" cy="190" rx="30" ry="18" fill="#FFFFFF" opacity="0.75"/>
+      <ellipse cx="145" cy="185" rx="35" ry="20" fill="#FFFFFF" opacity="0.8"/>
+      <ellipse cx="190" cy="205" rx="25" ry="15" fill="#FFFFFF" opacity="0.6"/>
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 16 280 218" width="100%" height="100%">
+  <defs>
+    <!-- Gradients for plush teddy fur -->
+    <radialGradient id="bearFur1" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#F5E3D0"/>
+      <stop offset="62%" stop-color="#DDBB95"/>
+      <stop offset="100%" stop-color="#BC9266"/>
+    </radialGradient>
+    <radialGradient id="bearFur2" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#EED8C0"/>
+      <stop offset="62%" stop-color="#CFA57D"/>
+      <stop offset="100%" stop-color="#A87D52"/>
+    </radialGradient>
+    <radialGradient id="snoutGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FFF9F1"/>
+      <stop offset="100%" stop-color="#EFE0CC"/>
+    </radialGradient>
+    <filter id="hugShadow" x="-18%" y="-18%" width="136%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#4E3B27" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <style>
+    .bear-hug-group {
+      animation: hugBreathe 3.2s ease-in-out infinite alternate;
+      transform-origin: 140px 180px;
+    }
+    .bear-left-snuggle {
+      animation: bearLeftSway 3.2s ease-in-out infinite alternate;
+      transform-origin: 112px 175px;
+    }
+    .bear-right-snuggle {
+      animation: bearRightSway 3.2s ease-in-out infinite alternate;
+      transform-origin: 168px 175px;
+    }
+    @keyframes hugBreathe {
+      0% { transform: scale(1) translateY(0); }
+      100% { transform: scale(1.03) translateY(-4px); }
+    }
+    @keyframes bearLeftSway {
+      0% { transform: rotate(-1deg); }
+      100% { transform: rotate(1.8deg); }
+    }
+    @keyframes bearRightSway {
+      0% { transform: rotate(1deg); }
+      100% { transform: rotate(-1.8deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bear-hug-group, .bear-left-snuggle, .bear-right-snuggle {
+        animation: none !important;
+      }
+    }
+  </style>
+
+  <!-- Soft ground shadow under bears -->
+  <ellipse cx="140" cy="223" rx="84" ry="9" fill="#8B735B" opacity="0.16"/>
+
+  <g class="bear-hug-group" filter="url(#hugShadow)">
+    <!-- ================= BEAR 1 (LEFT - LIGHT CARAMEL) ================= -->
+    <g class="bear-left-snuggle">
+      <!-- Left Bear Left Ear -->
+      <circle cx="80" cy="79" r="17.5" fill="url(#bearFur1)"/>
+      <circle cx="80" cy="79" r="9" fill="#F6E2CE"/>
+      <!-- Left Bear Right Ear -->
+      <circle cx="128" cy="74" r="16" fill="url(#bearFur1)"/>
+      <circle cx="128" cy="74" r="8" fill="#F6E2CE"/>
+
+      <!-- Left Bear Body -->
+      <ellipse cx="105" cy="168" rx="38" ry="44" fill="url(#bearFur1)"/>
+      <!-- Soft belly patch -->
+      <ellipse cx="105" cy="172" rx="20" ry="24" fill="#F6E4D1" opacity="0.48"/>
+      <!-- Feet -->
+      <ellipse cx="83" cy="214" rx="17" ry="12.5" fill="url(#bearFur1)"/>
+      <ellipse cx="83" cy="214" rx="9.5" ry="7" fill="#F6E2CE"/>
+
+      <!-- Left Bear Head -->
+      <ellipse cx="106" cy="108" rx="38" ry="34" transform="rotate(7 106 108)" fill="url(#bearFur1)"/>
+
+      <!-- Left Bear Snout -->
+      <ellipse cx="114" cy="117" rx="17" ry="13.5" fill="url(#snoutGrad)"/>
+      <ellipse cx="114" cy="112" rx="5.2" ry="3.7" fill="#423323"/>
+      <path d="M 114 115.5 L 114 120" stroke="#423323" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M 108.5 120 Q 114 125.5 119.5 120" fill="none" stroke="#423323" stroke-width="1.9" stroke-linecap="round"/>
+
+      <!-- Left Bear Eyes (Happy Closed Hug Arc) -->
+      <path d="M 93 107 Q 99 100.5 104 107" fill="none" stroke="#3D2F21" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M 120 105 Q 126 98.5 131 105" fill="none" stroke="#3D2F21" stroke-width="2.6" stroke-linecap="round"/>
+
+      <!-- Blushing Cheek -->
+      <ellipse cx="93" cy="116" rx="6.5" ry="3.8" fill="#EFA094" opacity="0.62"/>
+
+      <!-- Sage Green Little Bowtie on Left Bear -->
+      <g transform="translate(108, 143)">
+        <polygon points="0,0 -13,-6.5 -13,6.5" fill="#8A9C84"/>
+        <polygon points="0,0 13,-6.5 13,6.5" fill="#8A9C84"/>
+        <circle cx="0" cy="0" r="3.4" fill="#64755E"/>
+      </g>
+    </g>
+
+    <!-- ================= BEAR 2 (RIGHT - WARM TOFFEE) ================= -->
+    <g class="bear-right-snuggle">
+      <!-- Right Bear Right Ear -->
+      <circle cx="200" cy="79" r="17.5" fill="url(#bearFur2)"/>
+      <circle cx="200" cy="79" r="9" fill="#F0D5BC"/>
+      <!-- Right Bear Left Ear -->
+      <circle cx="152" cy="74" r="16" fill="url(#bearFur2)"/>
+      <circle cx="152" cy="74" r="8" fill="#F0D5BC"/>
+
+      <!-- Right Bear Body -->
+      <ellipse cx="175" cy="168" rx="38" ry="44" fill="url(#bearFur2)"/>
+      <!-- Soft belly patch -->
+      <ellipse cx="175" cy="172" rx="20" ry="24" fill="#F2DEC9" opacity="0.42"/>
+      <!-- Feet -->
+      <ellipse cx="197" cy="214" rx="17" ry="12.5" fill="url(#bearFur2)"/>
+      <ellipse cx="197" cy="214" rx="9.5" ry="7" fill="#F0D5BC"/>
+
+      <!-- Right Bear Head -->
+      <ellipse cx="174" cy="108" rx="38" ry="34" transform="rotate(-7 174 108)" fill="url(#bearFur2)"/>
+
+      <!-- Right Bear Snout -->
+      <ellipse cx="166" cy="117" rx="17" ry="13.5" fill="url(#snoutGrad)"/>
+      <ellipse cx="166" cy="112" rx="5.2" ry="3.7" fill="#423323"/>
+      <path d="M 166 115.5 L 166 120" stroke="#423323" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M 160.5 120 Q 166 125.5 171.5 120" fill="none" stroke="#423323" stroke-width="1.9" stroke-linecap="round"/>
+
+      <!-- Right Bear Eyes (Happy Closed Hug Arc) -->
+      <path d="M 149 105 Q 154 98.5 160 105" fill="none" stroke="#3D2F21" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M 176 107 Q 181 100.5 187 107" fill="none" stroke="#3D2F21" stroke-width="2.6" stroke-linecap="round"/>
+
+      <!-- Blushing Cheek -->
+      <ellipse cx="187" cy="116" rx="6.5" ry="3.8" fill="#EFA094" opacity="0.62"/>
+
+      <!-- Soft Peach Bow on Right Bear Ear -->
+      <g transform="translate(200, 67)">
+        <polygon points="0,0 -9,-4.5 -9,4.5" fill="#EBB39C"/>
+        <polygon points="0,0 9,-4.5 9,4.5" fill="#EBB39C"/>
+        <circle cx="0" cy="0" r="2.5" fill="#D49A80"/>
+      </g>
+    </g>
+
+    <!-- ================= HUGGING ARMS WRAPPED AROUND EACH OTHER ================= -->
+    <path d="M 94 148 C 118 143, 155 150, 173 165 C 177 169, 169 177, 163 173 C 146 163, 118 157, 94 161 Z" fill="url(#bearFur1)"/>
+    <circle cx="171" cy="169" r="9.5" fill="url(#bearFur1)"/>
+    <circle cx="171" cy="169" r="5.2" fill="#F6E2CE"/>
+
+    <path d="M 186 148 C 162 143, 125 150, 107 165 C 103 169, 111 177, 117 173 C 134 163, 162 157, 186 161 Z" fill="url(#bearFur2)"/>
+    <circle cx="109" cy="169" r="9.5" fill="url(#bearFur2)"/>
+    <circle cx="109" cy="169" r="5.2" fill="#F0D5BC"/>
+  </g>
+</svg>
+
