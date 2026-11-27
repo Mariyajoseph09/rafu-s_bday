@@ -1,5 +1,5 @@
 /**
- * RAFEAL'S 1ST BIRTHDAY CELEBRATION INVITATION
+ * RAFAEL'S 1ST BIRTHDAY CELEBRATION INVITATION
  * Single-Page Interactive Engine with Rich Animations
  */
 
@@ -16,71 +16,71 @@
   const BABY_GALLERY_PHOTOS = [
     {
       src: 'public/images/baby-gallery/baby-01.jpg',
-      alt: 'Baby Rafeal smiling brightly outdoors',
+      alt: 'Baby Rafael smiling brightly outdoors',
       caption: 'Our Little Sunshine'
     },
     {
       src: 'public/images/baby-gallery/baby-02.jpg',
-      alt: 'Baby Rafeal laughing happily in his bear shirt',
+      alt: 'Baby Rafael laughing happily in his bear shirt',
       caption: 'Those Beautiful Smiles'
     },
     {
       src: 'public/images/baby-gallery/baby-03.jpg',
-      alt: 'Baby Rafeal peeking sweetly over shoulder',
+      alt: 'Baby Rafael peeking sweetly over shoulder',
       caption: 'Our Bundle of Joy'
     },
     {
       src: 'public/images/baby-gallery/baby-04.jpg',
-      alt: 'Baby Rafeal wrapped cozily in a soft white blanket',
+      alt: 'Baby Rafael wrapped cozily in a soft white blanket',
       caption: 'Cozy Blanket Cuddles'
     },
     {
       src: 'public/images/baby-gallery/baby-05.jpg',
-      alt: 'Baby Rafeal smiling during tummy time beside his elephant toy',
+      alt: 'Baby Rafael smiling during tummy time beside his elephant toy',
       caption: 'Little Hands, Big Dreams'
     },
     {
       src: 'public/images/baby-gallery/baby-06.jpg',
-      alt: 'Baby Rafeal outdoors with soft curls and a sweet smile',
+      alt: 'Baby Rafael outdoors with soft curls and a sweet smile',
       caption: 'Sweet Curly Smiles'
     },
     {
       src: 'public/images/baby-gallery/baby-07.jpg',
-      alt: 'Baby Rafeal grinning happily in his fox t-shirt',
+      alt: 'Baby Rafael grinning happily in his fox t-shirt',
       caption: 'Pure Joy Every Day'
     },
     {
       src: 'public/images/baby-gallery/baby-08.jpg',
-      alt: 'Baby Rafeal looking up full of wonder',
+      alt: 'Baby Rafael looking up full of wonder',
       caption: 'Growing Up So Fast'
     },
     {
       src: 'public/images/baby-gallery/baby-09.jpg',
-      alt: 'Baby Rafeal playing with his colorful ball',
+      alt: 'Baby Rafael playing with his colorful ball',
       caption: 'Curious Little Explorer'
     },
     {
       src: 'public/images/baby-gallery/baby-10.jpg',
-      alt: 'Baby Rafeal held warmly in Dad arms outdoors',
+      alt: 'Baby Rafael held warmly in Dad arms outdoors',
       caption: 'Held Safe & Loved'
     },
     {
       src: 'public/images/baby-gallery/baby-11.jpg',
-      alt: 'Baby Rafeal waving hello with a joyful smile',
+      alt: 'Baby Rafael waving hello with a joyful smile',
       caption: 'Hello Big World!'
     },
     {
       src: 'public/images/baby-gallery/baby-12.jpg',
-      alt: 'Mom and Dad lifting baby Rafeal joyfully at sunset',
+      alt: 'Mom and Dad lifting baby Rafael joyfully at sunset',
       caption: 'Forever Our Baby'
     }
   ];
 
   const DEFAULT_EVENT_DATA = {
-    nickName: 'Rafeal',
+    nickName: 'Rafael',
     fullName: 'Rafael Richy Benedict',
     eventDate: '2026-12-09', // December 9th
-    eventTime: '16:30',      // 24h
+    eventTime: '19:30',      // 7:30 PM (24h)
     venueName: 'Celebration Venue',
     venueCity: 'Tap for Google Maps 📍',
     venueAddress: 'https://maps.app.goo.gl/dVaq5fmaRATvLRV79?g_st=aw',
@@ -92,7 +92,8 @@
     const savedData = localStorage.getItem('rafu_event_data_v2');
     if (savedData) {
       const parsed = JSON.parse(savedData);
-      if (parsed.nickName === 'Rafu') parsed.nickName = 'Rafeal';
+      if (parsed.nickName === 'Rafu' || parsed.nickName === 'Rafeal') parsed.nickName = 'Rafael';
+      if (parsed.eventTime === '16:30') parsed.eventTime = '19:30';
       if (parsed.venueAddress && parsed.venueAddress.includes('j1ZFTZy9tnqqyLXz6')) {
         parsed.venueAddress = DEFAULT_EVENT_DATA.venueAddress;
       }
@@ -537,7 +538,7 @@
     let target = new Date(dateTimeStr);
 
     if (isNaN(target.getTime())) {
-      target = new Date('2026-11-28T16:30:00');
+      target = new Date('2026-12-09T19:30:00');
     }
 
     const now = new Date();
@@ -815,7 +816,7 @@
         <div class="album-slide-ambient" style="background-image: url('${escapeHtml(photo.src)}');" aria-hidden="true"></div>
         <img
           src="${escapeHtml(photo.src)}"
-          alt="${escapeHtml(photo.alt || 'Baby Rafeal memory')}"
+          alt="${escapeHtml(photo.alt || 'Baby Rafael memory')}"
           class="album-slide-img"
           loading="${idx < 2 ? 'eager' : 'lazy'}"
           decoding="async"
@@ -988,7 +989,7 @@
     const photo = BABY_GALLERY_PHOTOS[currentSlideIndex];
     if (!photo || !photoViewerImg) return;
     photoViewerImg.src = photo.src;
-    photoViewerImg.alt = photo.alt || 'Baby Rafeal Full View';
+    photoViewerImg.alt = photo.alt || 'Baby Rafael Full View';
     if (photoViewerCaption) photoViewerCaption.textContent = photo.caption || '';
     if (lightboxCounter) lightboxCounter.textContent = `${currentSlideIndex + 1} / ${BABY_GALLERY_PHOTOS.length}`;
   }
@@ -1010,8 +1011,8 @@
     if (!photoViewerModal) return;
     isLightboxGalleryMode = false;
     photoViewerImg.src = src;
-    photoViewerImg.alt = caption || 'Baby Rafeal Full View';
-    if (photoViewerCaption) photoViewerCaption.textContent = caption || 'Baby Rafeal - Our Little Star';
+    photoViewerImg.alt = caption || 'Baby Rafael Full View';
+    if (photoViewerCaption) photoViewerCaption.textContent = caption || 'Baby Rafael - Our Little Star';
     if (lightboxPrevBtn) lightboxPrevBtn.style.display = 'none';
     if (lightboxNextBtn) lightboxNextBtn.style.display = 'none';
     if (lightboxCounter) lightboxCounter.style.display = 'none';
@@ -1130,7 +1131,7 @@
   if (shareInviteBtn) {
     shareInviteBtn.addEventListener('click', async () => {
       const shareTitle = `${eventData.nickName}'s 1st Birthday Celebration!`;
-      const shareText = `You're warmly invited to celebrate ${eventData.fullName}'s (Rafeal) 1st Birthday on ${eventData.eventDate} at ${eventData.venueName}! RSVP here:`;
+      const shareText = `You're warmly invited to celebrate ${eventData.fullName}'s 1st Birthday on ${eventData.eventDate} at 7:30 PM (${eventData.venueName})! RSVP here:`;
       const shareUrl = window.location.href;
 
       if (navigator.share) {

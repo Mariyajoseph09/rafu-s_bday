@@ -1,5 +1,5 @@
 /**
- * Google Apps Script for Rafeal Turns One RSVP -> Google Sheets
+ * Google Apps Script for Rafael Turns One RSVP -> Google Sheets
  *
  * IMPORTANT: Open this script directly from your Google Sheet via:
  *   Extensions -> Apps Script

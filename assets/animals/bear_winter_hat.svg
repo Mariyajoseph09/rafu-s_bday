@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" width="220" height="200">
+  <defs>
+    <linearGradient id="bearFurGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D9B38C"/>
+      <stop offset="50%" stop-color="#C59B70"/>
+      <stop offset="100%" stop-color="#AF8255"/>
+    </linearGradient>
+    <linearGradient id="beanieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFA8B8"/>
+      <stop offset="50%" stop-color="#E28EA0"/>
+      <stop offset="100%" stop-color="#C97587"/>
+    </linearGradient>
+    <linearGradient id="beanieCuffGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5F7"/>
+      <stop offset="100%" stop-color="#F2D6DC"/>
+    </linearGradient>
+    <linearGradient id="scarfGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A4BA9E"/>
+      <stop offset="50%" stop-color="#8DA787"/>
+      <stop offset="100%" stop-color="#76906F"/>
+    </linearGradient>
+    <filter id="softBearShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#705030" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes bearGentleBob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes earTwitch {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(3deg); }
+    }
+    @keyframes pompomSway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-6deg); }
+    }
+    .winter-bear-group {
+      animation: bearGentleBob 3.5s ease-in-out infinite;
+    }
+    .pompom-bob {
+      transform-origin: 110px 42px;
+      animation: pompomSway 3s ease-in-out infinite alternate;
+    }
+  </style>
+
+  <g class="winter-bear-group" filter="url(#softBearShadow)">
+    <!-- Decorative Winter Leaves and Berries Behind Bear -->
+    <g class="winter-berries" opacity="0.9">
+      <!-- Left Holly Leaf -->
+      <path d="M 45 130 C 35 118, 25 125, 20 115 C 26 110, 24 100, 36 98 C 45 106, 50 115, 45 130 Z" fill="#91A68D" stroke="#72876E" stroke-width="1.2"/>
+      <line x1="26" y1="113" x2="42" y2="124" stroke="#72876E" stroke-width="1"/>
+      <circle cx="48" cy="128" r="4.5" fill="#D9534F"/>
+      <circle cx="56" cy="133" r="4" fill="#C9302C"/>
+
+      <!-- Right Pine Branch & Berries -->
+      <path d="M 175 130 C 185 118, 195 125, 200 115 C 194 110, 196 100, 184 98 C 175 106, 170 115, 175 130 Z" fill="#91A68D" stroke="#72876E" stroke-width="1.2"/>
+      <line x1="194" y1="113" x2="178" y2="124" stroke="#72876E" stroke-width="1"/>
+      <circle cx="172" cy="128" r="4.5" fill="#D9534F"/>
+      <circle cx="164" cy="133" r="4" fill="#C9302C"/>
+    </g>
+
+    <!-- Bear Ears -->
+    <!-- Left Ear -->
+    <circle cx="70" cy="80" r="19" fill="url(#bearFurGrad)"/>
+    <circle cx="70" cy="80" r="11" fill="#ECCBB0"/>
+    <!-- Right Ear -->
+    <circle cx="150" cy="80" r="19" fill="url(#bearFurGrad)"/>
+    <circle cx="150" cy="80" r="11" fill="#ECCBB0"/>
+
+    <!-- Bear Head -->
+    <circle cx="110" cy="115" r="48" fill="url(#bearFurGrad)"/>
+
+    <!-- Cute Knitted Winter Beanie Hat -->
+    <!-- Hat Dome -->
+    <path d="M 68 95 C 68 45, 152 45, 152 95 Z" fill="url(#beanieGrad)" stroke="#B86273" stroke-width="1.5"/>
+    <!-- Knitted Texture Ribs on Hat -->
+    <path d="M 85 92 Q 95 60 110 52" stroke="#FFF" stroke-width="1.2" opacity="0.35" fill="none"/>
+    <path d="M 110 90 Q 110 58 110 52" stroke="#FFF" stroke-width="1.2" opacity="0.35" fill="none"/>
+    <path d="M 135 92 Q 125 60 110 52" stroke="#FFF" stroke-width="1.2" opacity="0.35" fill="none"/>
+    <!-- Hat Knitted Folded Cuff -->
+    <rect x="62" y="86" width="96" height="18" rx="8" fill="url(#beanieCuffGrad)" stroke="#E0B6BF" stroke-width="1.5"/>
+    <!-- Cuff Texture dashes -->
+    <g stroke="#D49AA6" stroke-width="1.5" stroke-linecap="round">
+      <line x1="74" y1="89" x2="74" y2="101"/>
+      <line x1="84" y1="89" x2="84" y2="101"/>
+      <line x1="94" y1="89" x2="94" y2="101"/>
+      <line x1="104" y1="89" x2="104" y2="101"/>
+      <line x1="114" y1="89" x2="114" y2="101"/>
+      <line x1="124" y1="89" x2="124" y2="101"/>
+      <line x1="134" y1="89" x2="134" y2="101"/>
+      <line x1="144" y1="89" x2="144" y2="101"/>
+    </g>
+    <!-- Hat Fluffy Pom-Pom on Top -->
+    <g class="pompom-bob">
+      <circle cx="110" cy="38" r="14" fill="#FFFFFF" stroke="#F0D7DC" stroke-width="1.5"/>
+      <!-- Soft fluff lines -->
+      <circle cx="106" cy="34" r="3" fill="#FFF5F7"/>
+      <circle cx="114" cy="36" r="2.5" fill="#FFF5F7"/>
+      <circle cx="109" cy="42" r="3" fill="#FFF5F7"/>
+    </g>
+
+    <!-- Bear Facial Features -->
+    <!-- Snout Muzzle -->
+    <ellipse cx="110" cy="126" rx="21" ry="16" fill="#F8EADB"/>
+    <!-- Nose -->
+    <ellipse cx="110" cy="119" rx="7.5" ry="5.5" fill="#4A3423"/>
+    <ellipse cx="108" cy="117.5" rx="2" ry="1.2" fill="#FFFFFF" opacity="0.7"/>
+    <!-- Mouth -->
+    <path d="M 110 124.5 L 110 131 M 105 130 Q 110 135 115 130" stroke="#4A3423" stroke-width="2" stroke-linecap="round" fill="none"/>
+    
+    <!-- Eyes -->
+    <ellipse cx="92" cy="113" rx="4.5" ry="5.5" fill="#382516"/>
+    <ellipse cx="128" cy="113" rx="4.5" ry="5.5" fill="#382516"/>
+    <!-- Eye Highlights -->
+    <circle cx="94" cy="111" r="1.8" fill="#FFFFFF"/>
+    <circle cx="91" cy="115" r="0.8" fill="#FFFFFF"/>
+    <circle cx="130" cy="111" r="1.8" fill="#FFFFFF"/>
+    <circle cx="127" cy="115" r="0.8" fill="#FFFFFF"/>
+
+    <!-- Rosy Cheeks -->
+    <ellipse cx="80" cy="125" rx="7.5" ry="4.5" fill="#F3A9B7" opacity="0.6"/>
+    <ellipse cx="140" cy="125" rx="7.5" ry="4.5" fill="#F3A9B7" opacity="0.6"/>
+
+    <!-- Cozy Winter Scarf around Neck -->
+    <path d="M 78 152 Q 110 162 142 152 Q 152 168 110 172 Q 68 168 78 152 Z" fill="url(#scarfGrad)" stroke="#678061" stroke-width="1.5"/>
+    <!-- Scarf Tails -->
+    <path d="M 122 162 L 136 195 L 116 195 L 114 165 Z" fill="url(#scarfGrad)" stroke="#678061" stroke-width="1.5"/>
+    <!-- Scarf Fringe -->
+    <line x1="118" y1="195" x2="118" y2="199" stroke="#EED59B" stroke-width="1.8"/>
+    <line x1="123" y1="195" x2="123" y2="199" stroke="#EED59B" stroke-width="1.8"/>
+    <line x1="128" y1="195" x2="128" y2="199" stroke="#EED59B" stroke-width="1.8"/>
+    <line x1="133" y1="195" x2="133" y2="199" stroke="#EED59B" stroke-width="1.8"/>
+    <!-- Scarf Polka Dots / Snowflakes -->
+    <circle cx="95" cy="160" r="2" fill="#FFFFFF" opacity="0.65"/>
+    <circle cx="112" cy="164" r="2" fill="#FFFFFF" opacity="0.65"/>
+    <circle cx="130" cy="160" r="2" fill="#FFFFFF" opacity="0.65"/>
+    <circle cx="125" cy="178" r="2" fill="#FFFFFF" opacity="0.65"/>
+
+    <!-- Paws Resting on Calendar Top Border -->
+    <ellipse cx="78" cy="172" rx="14" ry="10" fill="url(#bearFurGrad)" stroke="#9F764C" stroke-width="1.5"/>
+    <circle cx="78" cy="172" r="5" fill="#ECCBB0"/>
+    <ellipse cx="142" cy="172" rx="14" ry="10" fill="url(#bearFurGrad)" stroke="#9F764C" stroke-width="1.5"/>
+    <circle cx="142" cy="172" r="5" fill="#ECCBB0"/>
+  </g>
+</svg>
